@@ -1,0 +1,171 @@
+.input {
+    position: relative;
+    display: block;
+
+    &_lg {
+        .input__field {
+            @media (max-width: $break_sm) {
+                height: 40px;
+            }
+            height: 70px;
+        }
+        .input__icon {
+            padding-left: 25px;
+        }
+        .input__field,
+        .input__placeholder {
+            @media (max-width: $break_sm) {
+                padding-right: 15px;
+                padding-left: 19px;
+            }
+            padding-top: 11px;
+            padding-bottom: 11px;
+            padding-right: 27px;
+            padding-left: 48px;
+        }
+    }
+
+    &_md {
+        .input__field {
+            @media (max-width: $break_sm) {
+                height: 40px;
+            }
+            height: 60px;
+        }
+        .input__field,
+        .input__placeholder {
+            @media (max-width: $break_sm) {
+                padding-right: 15px;
+                padding-left: 19px;
+            }
+            padding-top: 11px;
+            padding-bottom: 11px;
+            padding-right: 27px;
+            padding-left: 27px;
+        }
+    }
+
+    &_sm {
+        .input__field,
+        .input__placeholder {
+            @media (max-width: $break_sm) {
+                padding-right: 15px;
+                padding-left: 15px;
+                height: 40px;
+            }
+            padding-top: 11px;
+            padding-bottom: 11px;
+            padding-right: 20px;
+            padding-left: 20px;
+            height: 50px;
+        }
+        &.input_filled .input__field {
+            @media (max-width: $break_sm) {
+            }
+            padding-top: 20px;
+        }
+    }
+
+    &_alpha {
+        .input__field {
+            background-color: $alpha-lighter;
+
+            &::placeholder,
+            & {
+                color: $dark;
+            }
+        }
+    }
+
+    &_gray {
+        .input__field {
+            background-color: $light;
+        }
+        .input__placeholder {
+            color: $dark;
+        }
+    }
+
+    &_textarea {
+        .input__field {
+            min-height: 76px;
+            border-radius: 20px;
+        }
+    }
+
+    &__field {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        outline: none;
+        transition: {
+            duration: 0.3s;
+            property: box-shadow;
+        }
+
+        &:focus-within {
+            box-shadow: 0px 10px 20px rgba($light, 0.4);
+        }
+        &::placeholder,
+        & {
+            @media (max-width: $break_sm) {
+                font-size: rem(12);
+            }
+            font-weight: 500;
+            font-size: rem(14);
+        }
+    }
+
+    &__field:focus,
+    &_filled &__field {
+        & ~ .input__placeholder {
+            font-size: rem(11);
+            transform: translateY(-30%);
+        }
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        font-size: rem(14);
+        font-weight: 500;
+        pointer-events: none;
+        user-select: none;
+        transition: {
+            property: font-size, transform;
+            duration: 0.3s;
+        }
+    }
+
+    &__error {
+        margin-left: 19px;
+        margin-top: 2px;
+        color: #ff0000;
+        font-size: rem(12);
+        font-weight: 400;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        padding-left: inherit;
+        box-sizing: content-box;
+    }
+
+    &_error {
+        .input__field {
+            box-shadow: 0 0 2px #ff0000;
+        }
+        &,
+        .input__placeholder {
+            color: #ff0000;
+        }
+    }
+}

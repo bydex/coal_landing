@@ -1,0 +1,21 @@
+mixin faq({ className = false })
+    include ./data
+    include ../../components/accordion/accordion
+
+    section.faq(class=className id="faq")
+        .faq__container
+            .faq__row
+                .faq__info-col 
+                    header.faq__header 
+                        h2.faq__title Часто задаваемые вопросы
+                        p.faq__description тут собраны самые популярные вопросы наших клиентов, которые накопились в процессе многолетней работы компании
+                    +accordion({
+                        className: "faq__accordion",
+                        accordionList: accordionList
+                    })
+                .faq__img-col 
+                    img.faq__img(
+                        src="./img/faq_img.png"
+                        srcset="./img/faq_img@2x.png 2x"
+                        alt="Химическая колба с жидкостью, рядом уголь и надпись 'НИЦ УГОЛЬ'"
+                    )

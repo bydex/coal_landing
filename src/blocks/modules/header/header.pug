@@ -1,0 +1,8 @@
+mixin header({ className = false })
+    include ../../components/top-line/top-line
+    include ../../components/nav/nav
+
+    header.header
+        .header__container
+            +top-line({ className: 'header__top-line' })
+            +nav({ className: 'header__nav' })

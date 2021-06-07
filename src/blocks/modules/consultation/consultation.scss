@@ -1,0 +1,96 @@
+.consultation {
+    padding: {
+        top: 38px;
+        bottom: 60px;
+    }
+    background: {
+        color: $alpha-light;
+        image: url(../img/consultation_backgroung.svg);
+        repeat: no-repeat;
+        size: 668px 591px;
+        position: -101px -45px;
+    }
+
+    &__container {
+        @include container();
+    }
+
+    &__row {
+        @include row-flex();
+    }
+
+    &__form-col {
+        @media (max-width: $break_xl) {
+            margin-bottom: 32px;
+        }
+        @include col();
+        @include size(8);
+        @include size-xl(12);
+    }
+
+    &__form {
+    }
+
+    &__title {
+        @include h3();
+        margin-bottom: 21px;
+    }
+
+    &__form-row {
+        @media (max-width: $break_md) {
+            flex-direction: column;
+            max-width: 330px;
+        }
+        display: flex;
+        gap: 20px;
+    }
+
+    &__input {
+        @media (max-width: $break_md) {
+            max-width: 100%;
+        }
+        flex-grow: 1;
+        max-width: 280px;
+    }
+
+    &__btn {
+    }
+
+    &__checkbox {
+        @media (max-width: $break_md) {
+            max-width: 100%;
+        }
+        max-width: 250px;
+        margin-top: 12px;
+    }
+
+    &__info-col {
+        @include col();
+        @include size(4);
+        @include size-xl(12);
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__card-img {
+        width: 130px;
+    }
+
+    &__card-info {
+    }
+
+    &__card-description {
+        margin-bottom: 6px;
+        font-size: rem(13);
+        line-height: 123%;
+    }
+
+    &__card-title {
+        line-height: 125%;
+        font-size: rem(16);
+    }
+}

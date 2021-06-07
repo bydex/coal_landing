@@ -1,0 +1,34 @@
+mixin consultation({ className = false })
+    include ../../components/input/input
+    include ../../components/checkbox/checkbox
+
+    section.consultation(class=className id="consultation")
+        .consultation__container
+            .consultation__row
+                .consultation__form-col
+                    form.consultation__form
+                        legend.consultation__title <b>Для бесплатной консультации</b> нужен только ваш телефон
+                        fieldset.consultation__form-row 
+                            +input({
+                                iconName: 'phone',
+                                viewBoxName: '0 0 16 16',
+                                className: 'consultation__input input_lg input_alpha',
+                                placeholder: 'Ваш телефон'
+                            })
+                            +btn({ 
+                                className: 'consultation__btn btn_size_lg btn_theme_light', 
+                                title: 'Оставить заявку',
+                            })
+                            +checkbox({
+                                className: 'consultation__checkbox checkbox_light',
+                            })
+                .consultation__info-col
+                    .consultation__card
+                        img.consultation__card-img(
+                            src="./img/consultation_manager.png" 
+                            srcset="./img/consultation_manager@2x.png"
+                            alt="Девушка в офисе держит проводной телефон возле лица"
+                        )
+                        .consultation__card-info 
+                            p.consultation__card-description Менеджер по работе с клиентами
+                            h5.consultation__card-title Иванова Мария Сергеевна

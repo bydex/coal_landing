@@ -1,0 +1,24 @@
+mixin card({ className = false, iconName, title, description, advantage })
+    li.card(class=className)
+        .card__img 
+            +icon({
+                iconName: iconName,
+                viewBoxName: '0 0 55 55',
+                className: 'card__icon',
+            })
+        .card__info
+            h4.card__title !{title}
+            p.card__description !{description}
+            p.card__advantage.checked-item
+                +icon({
+                    iconName: 'check',
+                    viewBoxName: '0 0 11 8',
+                    className: 'checked-item__icon'
+                })
+                | !{advantage}
+            .card__footer 
+                +btn({ 
+                    className: 'card__btn btn_size_md btn_theme_alpha-hover', 
+                    title: 'Заказать услугу'
+                })
+                a.card__link.link.link_underline.link_arrow(href="") Подробнее <span class="link__arrow">→</span>

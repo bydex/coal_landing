@@ -1,0 +1,73 @@
+mixin clients({ className = false })
+    include ./data
+
+    section.clients(class=className id="clients")
+        .clients__container
+            .clients__header
+                h2.clients__title Предлагаем самые выгодные условия для сотрудничества
+                .clients__gallery-advantages.gallery(id="clients-advantages-gallery")
+                    .gallery__list
+                        each slide in clientsAdvantages
+                            .gallery__slide
+                                .clients__slide-inner
+                                    img.clients__slide-img(
+                                        src=`./img/${slide.imgName}.jpg` 
+                                        srcset=`./img/${slide.imgName}@2x.jpg 2x` 
+                                        alt=`Картинка преимущества ${slide.title}`
+                                    )
+                                    .clients__slide-info
+                                        p.clients__slide-title !{slide.title}
+                                        p.clients__slide-description !{slide.description} 
+                    .gallery__footer
+                        .gallery__control-panel
+                            .gallery__pagination 
+                                span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                | /
+                                span.gallery__pagination-item(id="total-pagination") 03
+                            .gallery__controls(id="controls")
+                                button.gallery__control.link
+                                    +icon({
+                                        iconName: 'arrow-left',
+                                        viewBoxName: '0 0 17 16',
+                                        className: 'gallery__control-icon'
+                                    })
+                                button.gallery__control.link
+                                    +icon({
+                                        iconName: 'arrow-right',
+                                        viewBoxName: '0 0 17 16',
+                                        className: 'gallery__control-icon'
+                                    })
+            .clients__gallery.gallery(id="clients-gallery")
+                .clients__gallery-row
+                    .clients__gallery-info 
+                        h2.clients__gallery-title Наши клиенты
+                        p.clients__gallery-description с которыми мы работаем — это крупные казахстанские промышленные компании
+                    .gallery__list
+                        each slide in clientsList
+                            .gallery__slide
+                                .clients__slide-inner
+                                    img.clients__slide-img(
+                                        src=`./img/${slide.imgName}.svg` 
+                                        alt=`Фото сотрудника ${slide.title}`
+                                    )
+                                    .clients__slide-title !{slide.title}
+                                    .clients__slide-description !{slide.description} 
+                .gallery__footer
+                    .gallery__control-panel
+                        .gallery__pagination 
+                            span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                            | /
+                            span.gallery__pagination-item(id="total-pagination") 03
+                        .gallery__controls(id="controls")
+                            button.gallery__control.link
+                                +icon({
+                                    iconName: 'arrow-left',
+                                    viewBoxName: '0 0 17 16',
+                                    className: 'gallery__control-icon'
+                                })
+                            button.gallery__control.link
+                                +icon({
+                                    iconName: 'arrow-right',
+                                    viewBoxName: '0 0 17 16',
+                                    className: 'gallery__control-icon'
+                                })

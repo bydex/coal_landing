@@ -1,0 +1,62 @@
+mixin certificates({ className = false })
+    include ./data
+
+    section.certificates(class=className id="certificates")
+        .certificates__container
+            .certificates__row
+                .certificates__gallery-col 
+                    .certificates__gallery.gallery(id="certificates-gallery")
+                        .certificates__gallery-list.gallery__list
+                            each slide in certificatesStaff
+                                .certificates__slide.gallery__slide
+                                    .certificates__slide-inner
+                                        img.certificates__slide-img(
+                                            src=`./img/${slide.imgName}.jpg` 
+                                            srcset=`./img/${slide.imgName}@2x.jpg 2x` 
+                                            alt=`Скан документа "${slide.title}"`
+                                        )
+                                        p.certificates__slide-title !{slide.title}
+                                        p.certificates__slide-description !{slide.description} 
+                        .gallery__footer.certificates__slider-footer
+                            .gallery__control-panel
+                                .gallery__pagination 
+                                    span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                    | /
+                                    span.gallery__pagination-item(id="total-pagination") 03
+                                .gallery__controls(id="controls")
+                                    button.gallery__control.link
+                                        +icon({
+                                            iconName: 'arrow-left',
+                                            viewBoxName: '0 0 17 16',
+                                            className: 'gallery__control-icon'
+                                        })
+                                    button.gallery__control.link
+                                        +icon({
+                                            iconName: 'arrow-right',
+                                            viewBoxName: '0 0 17 16',
+                                            className: 'gallery__control-icon'
+                                        })
+                .certificates__info-col 
+                    h3.certificates__title Имеем ряд аттестатов аккредитации и сертификаты соответсвия
+                    ul.list.certificates__list
+                        li.list__item.checked-item
+                            +icon({
+                                iconName: 'check',
+                                viewBoxName: '0 0 11 8',
+                                className: 'checked-item__icon'
+                            })
+                            | Орган по подтверждению соответствия ТОО «НИЦ «Уголь» аккредитован в национальной системе аккредитации.
+                        li.list__item.checked-item
+                            +icon({
+                                iconName: 'check',
+                                viewBoxName: '0 0 11 8',
+                                className: 'checked-item__icon'
+                            })
+                            | Имеет собственную аккредитованную испытательную лабораторию.
+                        li.list__item.checked-item
+                            +icon({
+                                iconName: 'check',
+                                viewBoxName: '0 0 11 8',
+                                className: 'checked-item__icon'
+                            })
+                            | Имеем ряд специалистов с аттестатами экспертов аудиторов.

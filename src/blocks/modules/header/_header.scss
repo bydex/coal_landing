@@ -1,0 +1,28 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: {
+        top: 21px;
+        bottom: 21px;
+    }
+    color: $light;
+    background: {
+        color: $dark;
+        image: url(../img/intro_background.jpg);
+        size: cover;
+        position: top center;
+        attachment: fixed;
+    }
+
+    &__container {
+        @include container();
+    }
+    &__top-line {
+        margin-bottom: 23px;
+    }
+    &__nav {
+    }
+}

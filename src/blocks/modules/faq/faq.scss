@@ -1,0 +1,64 @@
+.faq {
+    @media (max-width: $break_md) {
+        padding: {
+            top: 33px;
+            bottom: 40px;
+        }
+    }
+    padding: {
+        top: 43px;
+        bottom: 73px;
+    }
+
+    &__container {
+        @include container();
+    }
+
+    &__row {
+        @include row-flex();
+    }
+
+    &__info-col {
+        @include col();
+        @include size(8);
+        @include size-md(12);
+    }
+
+    &__header {
+        margin-bottom: 13px;
+    }
+
+    &__title {
+        @include h2();
+        margin-bottom: 13px;
+        color: $alpha;
+    }
+
+    &__description {
+        @include h4();
+        line-height: 145%;
+        font-weight: 600;
+    }
+
+    &__accordion {
+        margin-bottom: 11px;
+    }
+
+    &__img-col {
+        @include col();
+        @include size(4);
+        @include size-md(12);
+    }
+
+    &__img {
+        @media (max-width: $break_xl) {
+            max-width: 100%;
+        }
+        @media (max-width: $break_md) {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 420px;
+            width: 100%;
+        }
+    }
+}

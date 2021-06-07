@@ -1,0 +1,103 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    border: 2px solid $alpha;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: {
+        property: background-color, border-color, color;
+        duration: 0.3s;
+    }
+
+    &__icon {
+        @media (max-width: $break_md) {
+            width: 17px;
+        }
+        margin-top: -4px;
+        width: 28px;
+    }
+}
+.btn:active {
+    transform: translateY(1px);
+}
+
+// SIZES
+.btn_size_sm {
+    padding: 6.5px 13px;
+    font-weight: 700;
+    font-size: rem(11);
+    line-height: 125%;
+}
+.btn_size_md {
+    @media (max-width: $break_md) {
+        padding: 6.5px 13px;
+        font-size: rem(11);
+    }
+    padding: 8.5px 21.5px;
+    font-weight: 600;
+    line-height: 122%;
+}
+.btn_size_lg {
+    @media (max-width: $break_lg) {
+        padding: 16px 16px;
+    }
+    @media (max-width: $break_md) {
+        padding: 8px 17.5px;
+        font-size: rem(13);
+    }
+    padding: 23px 24px;
+    font-weight: 600;
+    line-height: 122%;
+}
+.btn_size_xl {
+    padding: 22px 46px 20px 46px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 122%;
+}
+
+// themes
+.btn_theme_alpha {
+    color: $light;
+    background-color: $alpha;
+
+    &:hover {
+        background-color: transparent;
+        border-color: $light;
+    }
+}
+.btn_theme_light {
+    color: $alpha;
+    border-color: $light;
+    background-color: $light;
+
+    &:hover {
+        color: $light;
+        background-color: transparent;
+        border-color: $light;
+    }
+}
+.btn_theme_alpha-hover {
+    color: $light;
+    background-color: $alpha;
+
+    &:hover {
+        color: $alpha;
+        background-color: transparent;
+        border-color: $alpha;
+    }
+}
+.btn_theme_transparent {
+    color: $light;
+    background-color: transparent;
+
+    &:hover {
+        color: $dark;
+        background-color: $alpha;
+        border-color: $alpha;
+    }
+}

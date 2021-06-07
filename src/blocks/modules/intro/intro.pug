@@ -1,0 +1,67 @@
+mixin intro({ className = false })
+    include ./data
+    include ../../components/advantage/advantage
+
+    section.intro
+        .intro__container
+            .intro__row 
+                .intro__info-col
+                    h1.intro__title ТОО «НИЦ «Уголь»
+                    p.intro__description предлагает комплекс услуг по исследованию, испытанию, стандартизации и сертификации углей и продуктов их переработки по всему Казахстану
+                    ul.intro__advantages
+                        each advantage in advantagesInfo
+                            +advantage({ 
+                                className: 'intro__advantage advantage_state_horizontal',
+                                title: advantage.title,
+                                description: advantage.description
+                            })
+                    .intro__buttons
+                        +btn({ 
+                            className: 'top-line__btn btn_size_lg btn_theme_alpha-hover', 
+                            title: 'Оставить заявку',
+                            icon: {
+                                position: 'left',
+                                iconName: 'request',
+                                viewBoxName: '0 0 31 27'
+                            }
+                        })
+                        a.top-line__link.link.link_underline.link_arrow(href="") Наши услуги <span class="link__arrow">→</span>
+                .intro__img-col
+                    .intro__gallery.gallery(id="intro-gallery")
+                        .gallery__rounds.rounds
+                            span.gallery__dot.gallery__dot-1.dot
+                            span.gallery__dot.gallery__dot-2.dot
+                            span.gallery__dot.gallery__dot-3.dot
+                        .gallery__list.intro__gallery-list
+                            each slide in sliderInfo
+                                .gallery__slide
+                                    img.gallery__img(src=`./img/${slide.imgName}.png` srcset=`./img/${slide.imgName}@2x.png 2x`)
+                        .gallery__footer.intro__gallery-footer
+                            .gallery__control-panel
+                                .gallery__pagination 
+                                    span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                    | /
+                                    span.gallery__pagination-item(id="total-pagination") 03
+                                .gallery__controls(id="controls")
+                                    button.gallery__control.link
+                                        +icon({
+                                            iconName: 'arrow-left',
+                                            viewBoxName: '0 0 17 16',
+                                            className: 'gallery__control-icon'
+                                        })
+                                    button.gallery__control.link
+                                        +icon({
+                                            iconName: 'arrow-right',
+                                            viewBoxName: '0 0 17 16',
+                                            className: 'gallery__control-icon'
+                                        })
+                            .gallery__thumbnails(id="thumbnails")
+                                each slide in sliderInfo
+                                    .gallery__description !{slide.description}
+                                    
+        a.intro__mouse(href="")
+            +icon({
+                iconName: 'mouse',
+                className: 'intro__mouse-icon',
+                viewBoxName: '0 0 20 69'
+            })

@@ -1,0 +1,112 @@
+.steps {
+    @media (max-width: $break_xl) {
+        background: {
+            size: auto calc(100% - 30px);
+            position: 100% center;
+        }
+    }
+    @media (max-width: $break_md) {
+        background: {
+            size: 335px 314px;
+            position: calc(100% + 85px) calc(100% + 61px);
+        }
+    }
+    @media (max-width: $break_sm) {
+        padding: {
+            top: 41px;
+            bottom: 47px;
+        }
+        text-align: center;
+    }
+    padding: {
+        top: 41px;
+        bottom: 25px;
+    }
+    background: {
+        color: $alpha-light;
+        image: url(../img/consultation_backgroung.svg);
+        repeat: no-repeat;
+        size: 668px 591px;
+        position: calc(100% - 97px) -72px;
+    }
+
+    &__container {
+        @include container();
+    }
+
+    &__header {
+        @media (max-width: $break_sm) {
+            margin-bottom: 25px;
+        }
+        margin-bottom: 12px;
+    }
+
+    &__title {
+        @include h1();
+        margin-bottom: 8px;
+    }
+
+    &__description {
+        @include h4();
+        max-width: 522px;
+        font-weight: 600;
+    }
+
+    &__list {
+        @media (max-width: $break_lg) {
+            gap: $offset;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 80px;
+        counter-reset: step;
+    }
+
+    &__item {
+        @media (max-width: $break_lg) {
+            flex-basis: calc(33.33% - #{$offset});
+        }
+        @media (max-width: $break_md) {
+            flex-basis: calc(50% - #{$offset});
+        }
+        @media (max-width: $break_sm) {
+            flex-basis: 100%;
+        }
+        flex-basis: calc(20% - 80px);
+    }
+
+    &__counter {
+        @media (max-width: $break_sm) {
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 20px;
+        line-height: 198%;
+
+        &:before {
+            counter-increment: step;
+            content: "0" counter(step);
+            margin-right: 6px;
+            font-size: rem(32);
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+
+    &__icon {
+        max-width: 50px;
+        margin-left: 15px;
+    }
+
+    &__item-title {
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    &__item-description {
+        @include p-sm();
+        line-height: 154%;
+    }
+}

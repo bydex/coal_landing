@@ -1,0 +1,156 @@
+.nav {
+    @media (max-width: $break_lg) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        padding: 16px 32px;
+        height: 100%;
+        min-width: 295px;
+        max-width: 295px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        background: {
+            color: $alpha;
+            image: url(../img/consultation_backgroung.svg);
+            repeat: no-repeat;
+            size: 495px 394px;
+            position: calc(-100% - 205px) calc(100% + 93px);
+        }
+        transition: {
+            property: transform;
+            duration: .5s;
+        };
+
+        &_active {
+            transform: translateX(0);
+        }
+    }
+
+    &__header {
+        @media (max-width: $break_lg) {
+            display: block;
+            margin-bottom: 25px;
+        }
+        display: none;
+    }
+
+    &__info {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__phones {
+        margin-bottom: 13px;
+    }
+
+    &__phone {
+        display: block;
+        margin-bottom: 4px;
+
+        &:first-child {
+            margin-bottom: 10px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo-wrapper {
+        margin-bottom: 20px;
+    }
+
+    &__logo {
+        width: 42px;
+    }
+
+    &__description {
+        margin-top: 10px;
+        max-width: 181px;
+        font-weight: 600;
+        font-size: rem(9);
+    }
+
+    &__socials {
+        display: flex;
+        gap: 10px;
+    }
+
+    
+    
+    &__inner {
+        @media (max-width: $break_lg) {
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+            backdrop-filter: none;
+        }
+
+        padding: {
+            left: 32px;
+            right: 32px;
+        }
+        background-color: rgba($light, .1);
+        border: 1px solid rgba($light, .1);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+    }
+
+    &__list {
+        @media (max-width: $break_xl) {
+            gap: 24px;
+        }
+        @media (max-width: $break_lg) {
+            display: block;
+        }
+        display: flex;
+        gap: 42px;
+    }
+    
+    &__item {
+        @media (max-width: $break_lg) {
+            display: block;
+        }
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        @media (max-width: $break_xl) {
+            font-size: rem(14);
+            white-space: nowrap;
+        }
+        @media (max-width: $break_lg) {
+            padding: 12px 0;
+            font-size: rem(16);
+            font-weight: 700;
+
+            &:hover {
+                color: $light;
+            }
+        }
+        display: block;
+        padding: {
+            top: 15px;
+            bottom: 15px;
+        }
+        transition: {
+            duration: .3s;
+            property: color;
+        }
+
+        &:hover {
+            color: $alpha;
+        }
+    }
+
+    &__link_icon {
+        @media (max-width: $break_lg) {
+            display: none;
+        }
+    }
+
+    &__icon {
+        width: 17px;
+    }
+}

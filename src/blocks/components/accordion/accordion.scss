@@ -1,0 +1,92 @@
+.accordion {
+    counter-reset: accordion-id;
+
+    &__item {
+        @media (max-width: $break_sm) {
+            padding-bottom: 19px;
+        }
+        padding-bottom: 25px;
+        border-bottom: 1px solid $gamma-dark;
+    }
+
+    &__header {
+        @media (max-width: $break_sm) {
+            font-size: rem(13);
+            padding-bottom: 19px;
+            margin-bottom: -19px;
+        }
+        position: relative;
+        padding-top: 21px;
+        padding-bottom: 25px;
+        margin-bottom: -25px;
+        font-weight: 600;
+        line-height: 137%;
+        cursor: pointer;
+        user-select: none;
+
+        &:active {
+            transform: translateY(1px);
+        }
+
+        &:before {
+            @include h4();
+            @media (max-width: $break_md) {
+                font-size: rem(18);
+            }
+            position: absolute;
+            left: 0;
+            counter-increment: accordion-id;
+            content: "0" counter(accordion-id);
+            color: $alpha;
+            line-height: 74%;
+            font-weight: 600;
+        }
+
+        &:after {
+            @media (max-width: $break_sm) {
+                font-size: rem(32);
+            }
+            position: absolute;
+            right: 0;
+            top: 21px;
+            content: "↑";
+            font-size: rem(42);
+            font-weight: 200;
+            transition: {
+                property: transform;
+                duration: 0.5s;
+            }
+
+            .accordion__item_active & {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__header,
+    &__body {
+        @media (max-width: $break_md) {
+            padding-right: 64px;
+        }
+        @media (max-width: $break_sm) {
+            padding-right: 32px;
+        }
+        padding-left: 40px;
+        padding-right: 132px;
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    &__content {
+        @media (max-width: $break_sm) {
+            font-size: rem(11);
+        }
+        padding-top: 10px;
+        font-size: rem(13);
+    }
+}

@@ -1,0 +1,8 @@
+mixin input({ className = false, typeName = "text", placeholder = false, iconName, viewBoxName, })
+    label.input(class=className)
+        +icon({
+            iconName,
+            viewBoxName,
+            className: "input__icon"
+        })
+        input.input__field(type=typeName placeholder=placeholder)

@@ -1,0 +1,7 @@
+mixin checkbox({ className = false })
+    label.checkbox(class=className)
+        input.checkbox__field(type='checkbox' checked='')
+        span.checkbox__custom
+        span.checkbox__title
+            | Вы соглашаетесь с условиями обработки 
+            a.link.link_alpha.link_underline(href='javascript:;' data-custom-open='policy-modal') персональных данных

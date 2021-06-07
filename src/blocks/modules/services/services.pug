@@ -1,0 +1,18 @@
+mixin services({ className = false })
+    include ./data
+    include ../../components/card/card
+
+    section.services(class=className id="services")
+        .services__container 
+            header.services__header
+                h2.services__title Наши  услуги
+                p.services__subtitle Основными видами деятельности компании являются
+            ul.services__list
+                each service in servicesList
+                    +card({
+                        className: "services__item", 
+                        iconName: service.iconName,
+                        title: service.title, 
+                        description: service.description,
+                        advantage: service.advantage
+                    })

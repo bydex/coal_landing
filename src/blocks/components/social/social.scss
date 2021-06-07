@@ -1,0 +1,26 @@
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    color: $alpha;
+    background-color: $light;
+    border-radius: 50%;
+    transition: {
+        property: color, background-color;
+        duration: .5s;
+    }
+
+    &:hover {
+        color: $light;
+        background-color: $alpha;
+    }
+
+    &__icon {
+        width: 15px;
+        height: 15px;
+    }
+}

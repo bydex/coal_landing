@@ -1,0 +1,49 @@
+mixin nav({ className = false })
+    include ./data
+    include ../social/social
+    include ../btn/btn
+
+    .nav(class=className id="nav")
+        .nav__header
+            .nav__logo-wrapper
+                .nav__logo-wrapper
+                    +icon({ 
+                        iconName: 'logo', 
+                        viewBoxName: '0 0 43 41', 
+                        className: 'nav__logo'
+                    })
+                .nav__description !{config.slogan}
+            .nav__phones
+                a.link.link_size_large.link_without-hover.nav__phone(href=`tel:${config.phone[0].tel}`) #{config.phone[0].number}
+                a.link.link_size_small.link_without-hover.nav__phone(href=`tel:${config.phone[1].tel}`) #{config.phone[1].number}
+                a.link.link_size_small.link_without-hover.nav__phone(href=`tel:${config.phone[2].tel}`) #{config.phone[2].number}
+            .nav__info
+                ul.nav__socials
+                    li.nav__socials-item 
+                        +social({ 
+                            hrefName: config.socials.whatsapp.href,
+                            className: 'nav__social', 
+                            iconName: config.socials.whatsapp.iconName,
+                            viewBoxName: '0 0 15 15'
+                        })
+                    li.nav__socials-item 
+                        +social({
+                            hrefName: config.socials.telegram.href,
+                            className: 'nav__social',
+                            iconName: config.socials.telegram.iconName,
+                            viewBoxName: '0 0 15 15'
+                        })
+                +btn({ 
+                    className: 'top-line__btn btn_size_sm btn_theme_light', 
+                    title: 'Перезвонить'
+                })
+
+        nav.nav__inner
+            ul.nav__list 
+                each link in navLinks
+                    li.nav__item 
+                        if (link.iconName)
+                            a.nav__link(class="nav__link_icon" href=`#${link.href}`)
+                                +icon({ className: 'nav__icon', iconName: link.iconName, viewBoxName: link.viewBoxName })
+                        else
+                            a.nav__link(href=`#${link.href}`) !{link.title}

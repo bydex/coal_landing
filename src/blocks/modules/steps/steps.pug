@@ -1,0 +1,20 @@
+mixin steps({ className = false })
+    include ./data
+
+    section.steps(class=className id="steps")
+        .steps__container
+            header.steps__header 
+                h2.steps__title Как мы работаем
+                p.steps__description Кратко, понятно, поэтапно о процессе сотрудничества с нами
+            ul.steps__list
+                each step in steps
+                    li.steps__item
+                        .steps__counter 
+                            | /
+                            +icon({
+                                iconName: step.iconName,
+                                viewBoxName: "0 0 50 50",
+                                className: "steps__icon"
+                            })
+                        h3.steps__item-title !{step.title}
+                        p.steps__item-description !{step.description}

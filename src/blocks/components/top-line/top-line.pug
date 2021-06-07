@@ -1,0 +1,50 @@
+mixin top-line({ className = false })
+    include ../../components/social/social
+    include ../../components/btn/btn
+    include ../../components/hamburger/hamburger
+
+    .top-line(class=className)
+        .top-line__logo-wrapper
+            +icon({ 
+                iconName: 'logo', 
+                viewBoxName: '0 0 43 41', 
+                className: 'top-line__logo'
+            })
+        .top-line__description !{config.slogan}
+        .top-line__socials
+            p.top-line__title Пишите online
+            ul.top-line__socials-list
+                li.top-line__socials-item 
+                    +social({ 
+                        hrefName: config.socials.whatsapp.href,
+                        className: 'top-line__social', 
+                        iconName: config.socials.whatsapp.iconName,
+                        viewBoxName: '0 0 15 15'
+                    })
+                li.top-line__socials-item 
+                    +social({
+                        hrefName: config.socials.telegram.href,
+                        className: 'top-line__social',
+                        iconName: config.socials.telegram.iconName,
+                        viewBoxName: '0 0 15 15'
+                    })
+        .top-line__call
+            p.top-line__title Звоните
+            .top-line__dropdown.dropdown 
+                a.link.link_size_large.dropdown__link(href=`tel:${config.phone[0].tel}`) #{config.phone[0].number}
+                button.dropdown__arrow
+                    +icon({ 
+                        className: 'dropdown__icon', 
+                        iconName: 'chevron-down', 
+                        viewBoxName: '0 0 10 7' 
+                    })
+            small.top-line__call-description ПН-ПТ с 9:00 до 18:00
+        .top-line__btn-wrapper
+            +btn({ 
+                className: 'top-line__btn btn_size_md btn_theme_alpha', 
+                title: 'Перезвонить'
+            })
+        +hamburger({
+            idName: "hamburger-menu",
+            className: 'top-line__hamburger'
+        })

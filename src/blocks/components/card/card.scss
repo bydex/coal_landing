@@ -1,0 +1,103 @@
+.card {
+    @media (max-width: $break_xl) {
+        flex-direction: column;
+    }
+    @media (max-width: $break_md) {
+        flex-direction: row;
+        gap: 20px;
+        padding: 20px;
+    }
+    @media (max-width: $break_sm) {
+        padding: 30px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    background-color: rgba($light, 0.25);
+    border: 1px solid rgba($dark, 0.05);
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+
+    &:hover &__img {
+        color: $light;
+        background-color: $alpha;
+    }
+
+    &__img {
+        @media (max-width: $break_md) {
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+        }
+        min-width: 140px;
+        min-height: 140px;
+        max-width: 140px;
+        max-height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $dark;
+        border-radius: 50%;
+        transition: {
+            duration: 0.3s;
+            property: color, background-color;
+        }
+    }
+
+    &__icon {
+        @media (max-width: $break_sm) {
+            width: 40px;
+        }
+        width: 55px;
+    }
+
+    &__info {
+        @media (max-width: $break_sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        @include h4();
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    &__description {
+        @media (max-width: $break_sm) {
+            margin-bottom: 15px;
+            font-size: rem(13);
+        }
+        margin-bottom: 20px;
+        line-height: 137%;
+    }
+
+    &__advantage {
+        @media (max-width: $break_sm) {
+            max-width: 288px;
+            font-size: rem(13);
+        }
+        margin-bottom: 20px;
+        color: $alpha;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+    }
+
+    &__btn {
+        font-size: rem(13);
+    }
+
+    &__link {
+        font-size: rem(13);
+    }
+}

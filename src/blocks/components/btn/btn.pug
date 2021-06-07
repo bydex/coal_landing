@@ -1,0 +1,40 @@
+mixin btn({className = ['btn_theme_alpha', 'btn_size_sm'], title = false, link = false, target = false, download = false, modalId = false, icon = false })
+    if (link)
+        a.btn(href=link class=className target=target download=download)
+            if (icon && icon.position === 'left')
+                +icon({
+                    className: 'btn__icon',
+                    iconName: icon.iconName,
+                    viewBoxName: icon.viewBoxName
+                })
+            | !{title}
+            if (icon && icon.position === 'right')
+                +icon({
+                    className: 'btn__icon',
+                    iconName: icon.iconName,
+                    viewBoxName: icon.viewBoxName
+                })
+    else
+        button.btn(class=className data-modal-id=modalId)
+            if (icon && icon.position === 'left')
+                +icon({
+                    className: 'btn__icon',
+                    iconName: icon.iconName,
+                    viewBoxName: icon.viewBoxName
+                })
+            | !{title}
+            if (icon && icon.position === 'right')
+                +icon({
+                    className: 'btn__icon',
+                    iconName: icon.iconName,
+                    viewBoxName: icon.viewBoxName
+                })
+
+    //- SIZES
+    //- btn_size_sm
+    //- btn_size_md
+    //- btn_size_lg
+
+    //- THEMES
+    //- btn_theme_alpha
+    //- btn_theme_transparent

@@ -1,0 +1,20 @@
+mixin accordion({ className = false, accordionList = [] })
+    dl.accordion(class=className)
+        each accorion in accordionList
+            .accordion__item
+                dt.accordion__header !{accorion.title}
+                dd.accordion__body(aira-hidden="true")
+                    .accordion__content.content
+                        each text in accorion.description 
+                            if (Array.isArray(text))
+                                ul 
+                                    each textItem in text
+                                        li.checked-item 
+                                            +icon({
+                                                iconName: "check",
+                                                className: "checked-item__icon",
+                                                viewBoxName: "0 0 11 8"
+                                            })
+                                            | !{textItem}
+                            else 
+                                p !{text}
