@@ -1,4 +1,10 @@
 .header {
+    @media (max-width: $break_sm) {
+        padding: {
+            top: 14px;
+            bottom: 14px;
+        }
+    }
     position: fixed;
     top: 0;
     left: 0;
@@ -21,6 +27,9 @@
         @include container();
     }
     &__top-line {
+        @media (max-width: $break_lg) {
+            margin-bottom: 0;
+        }
         margin-bottom: 23px;
     }
     &__nav {

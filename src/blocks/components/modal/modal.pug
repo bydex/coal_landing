@@ -1,0 +1,30 @@
+mixin modal({ className = false, modalName, title, description, iconName })
+
+    section.modal.micromodal(class=[className, modalName] aria-hidden='true' id=modalName)
+        .modal__overlay(tabindex='-1' data-custom-close='')
+            .modal__container(role='dialog' aria-modal='true' aria-labelledby=`${modalName}-title`)
+                header.modal__header
+                    .modal__header-info
+                        h2.modal__title !{title}
+                        if description
+                            p.modal__description !{description}
+                        button.modal__close(aria-label="Close modal" data-custom-close)
+                            +icon({
+                                iconName: 'close',
+                                className: 'modal__icon',
+                                viewBoxName: '0 0 13 13'
+                            })
+                    if (iconName)
+                        .card__img.modal__img
+                            +icon({
+                                iconName: iconName,
+                                viewBoxName: '0 0 55 55',
+                                className: 'card__icon',
+                            })
+                .modal__content
+                    block
+                +icon({
+                    iconName: 'logo',
+                    className: 'modal__logo logo logo_light',
+                    viewBoxName: '0 0 43 41'
+                })

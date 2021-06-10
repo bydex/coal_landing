@@ -5,6 +5,8 @@
         line-height: 121%;
     }
     &__description {
+        font-weight: 600;
+        line-height: 125%;
         @media (max-width: $break_lg) {
             font-size: rem(14);
         }
@@ -14,15 +16,16 @@
         @media (max-width: $break_sm) {
             font-size: rem(11);
         }
-        font-weight: 600;
-        line-height: 125%;
     }
 
     &_state {
         &_horizontal {
             display: flex;
             align-items: center;
-            gap: 10px;
+
+            .advantage__title {
+                margin-right: 10px;
+            }
         }
     }
 }

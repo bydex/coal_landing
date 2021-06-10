@@ -1,21 +1,10 @@
 .clients {
+    color: $light;
     @media (max-width: $break_md) {
         padding: {
             top: 40px;
             bottom: 45px;
         }
-    }
-    padding: {
-        top: 82px;
-        bottom: 86px;
-    }
-    color: $light;
-    background: {
-        color: $dark;
-        image: url(../img/clients_background.jpg);
-        size: cover;
-        position: top center;
-        attachment: fixed;
     }
 
     &__container {
@@ -28,17 +17,17 @@
     }
 
     &__title {
+        @include col();
+        @include size(6);
+        @include size-lg(12);
+        @include h2();
+        color: $alpha;
         @media (max-width: $break_lg) {
             margin-bottom: 32px;
         }
         @media (max-width: $break_sm) {
             margin-bottom: 23px;
         }
-        @include col();
-        @include size(6);
-        @include size-lg(12);
-        @include h2();
-        color: $alpha;
     }
 
     &__gallery-advantages {
@@ -53,6 +42,8 @@
                 }
             }
             &__footer {
+                margin-top: -27px;
+                margin-left: 200px;
                 @media (max-width: $break_md) {
                     margin-left: 180px;
                 }
@@ -60,33 +51,32 @@
                     margin-left: 0;
                     margin-top: 0;
                 }
-                margin-top: -27px;
-                margin-left: 200px;
             }
         }
 
         .clients__slide-inner {
-            @media (max-width: $break_sm) {
-                flex-direction: column;
-                gap: 20px;
-            }
             display: flex;
             align-items: center;
-            gap: 30px;
+            @media (max-width: $break_sm) {
+                flex-direction: column;
+            }
         }
 
         .clients__slide-img {
+            border-radius: 50%;
             @media (max-width: $break_md) {
                 max-width: 150px;
             }
-            border-radius: 50%;
         }
 
         .clients__slide-info {
+            padding-bottom: 32px;
+            margin-left: 30px;
             @media (max-width: $break_sm) {
                 padding-bottom: 0;
+                margin-top: 20px;
+                margin-left: 0;
             }
-            padding-bottom: 32px;
         }
 
         .clients__slide-title {
@@ -153,20 +143,31 @@
     }
 
     &__gallery-row {
+        @include row-flex();
+        margin-bottom: 8px;
         @media (max-width: $break_md) {
             margin-bottom: 14px;
         }
-        @include row-flex();
-        margin-bottom: 8px;
     }
 
     &__gallery-info {
-        @media (max-width: $break_md) {
-            margin-bottom: 32px;
-        }
         @include col();
         @include size(4);
         @include size-xl(6);
         @include size-md(10);
+        @media (max-width: $break_md) {
+            margin-bottom: 32px;
+        }
+    }
+    padding: {
+        top: 82px;
+        bottom: 86px;
+    }
+    background: {
+        color: $dark;
+        image: url(../img/clients_background.jpg);
+        size: cover;
+        position: top center;
+        attachment: fixed;
     }
 }

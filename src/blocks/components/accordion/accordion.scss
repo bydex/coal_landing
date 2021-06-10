@@ -2,19 +2,14 @@
     counter-reset: accordion-id;
 
     &__item {
+        padding-bottom: 25px;
+        border-bottom: 1px solid $gamma-dark;
         @media (max-width: $break_sm) {
             padding-bottom: 19px;
         }
-        padding-bottom: 25px;
-        border-bottom: 1px solid $gamma-dark;
     }
 
     &__header {
-        @media (max-width: $break_sm) {
-            font-size: rem(13);
-            padding-bottom: 19px;
-            margin-bottom: -19px;
-        }
         position: relative;
         padding-top: 21px;
         padding-bottom: 25px;
@@ -23,6 +18,11 @@
         line-height: 137%;
         cursor: pointer;
         user-select: none;
+        @media (max-width: $break_sm) {
+            font-size: rem(13);
+            padding-bottom: 19px;
+            margin-bottom: -19px;
+        }
 
         &:active {
             transform: translateY(1px);
@@ -30,49 +30,48 @@
 
         &:before {
             @include h4();
-            @media (max-width: $break_md) {
-                font-size: rem(18);
-            }
+            content: "0" counter(accordion-id);
             position: absolute;
             left: 0;
             counter-increment: accordion-id;
-            content: "0" counter(accordion-id);
             color: $alpha;
             line-height: 74%;
             font-weight: 600;
+            @media (max-width: $break_md) {
+                font-size: rem(18);
+            }
         }
 
         &:after {
-            @media (max-width: $break_sm) {
-                font-size: rem(32);
-            }
-            position: absolute;
-            right: 0;
-            top: 21px;
             content: "↑";
+            position: absolute;
+            top: 21px;
+            right: 0;
             font-size: rem(42);
             font-weight: 200;
-            transition: {
-                property: transform;
-                duration: 0.5s;
+            @media (max-width: $break_sm) {
+                font-size: rem(32);
             }
 
             .accordion__item_active & {
                 transform: rotate(180deg);
             }
+            transition: {
+                property: transform;
+                duration: 0.5s;
+            }
         }
     }
 
-    &__header,
-    &__body {
+    &__header, &__body {
+        padding-left: 40px;
+        padding-right: 132px;
         @media (max-width: $break_md) {
             padding-right: 64px;
         }
         @media (max-width: $break_sm) {
             padding-right: 32px;
         }
-        padding-left: 40px;
-        padding-right: 132px;
     }
 
     &__body {
@@ -80,13 +79,17 @@
         z-index: 2;
         max-height: 0;
         overflow: hidden;
+        transition: {
+            property: max-height;
+            duration: 500ms;
+        }
     }
 
     &__content {
+        padding-top: 10px;
+        font-size: rem(13);
         @media (max-width: $break_sm) {
             font-size: rem(11);
         }
-        padding-top: 10px;
-        font-size: rem(13);
     }
 }

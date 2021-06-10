@@ -10,7 +10,7 @@ mixin nav({ className = false })
                     +icon({ 
                         iconName: 'logo', 
                         viewBoxName: '0 0 43 41', 
-                        className: 'nav__logo'
+                        className: 'nav__logo logo logo_light'
                     })
                 .nav__description !{config.slogan}
             .nav__phones
@@ -35,7 +35,11 @@ mixin nav({ className = false })
                         })
                 +btn({ 
                     className: 'top-line__btn btn_size_sm btn_theme_light', 
-                    title: 'Перезвонить'
+                    title: 'Перезвонить',
+                    attributesName: {
+                        'data-custom-open': 'modal-call',
+                        'data-close-menu': '',
+                    }
                 })
 
         nav.nav__inner
@@ -43,7 +47,7 @@ mixin nav({ className = false })
                 each link in navLinks
                     li.nav__item 
                         if (link.iconName)
-                            a.nav__link(class="nav__link_icon" href=`#${link.href}`)
+                            a.nav__link(class="nav__link_icon" href=`#${link.href}` data-close-menu)
                                 +icon({ className: 'nav__icon', iconName: link.iconName, viewBoxName: link.viewBoxName })
                         else
-                            a.nav__link(href=`#${link.href}`) !{link.title}
+                            a.nav__link(href=`#${link.href}` data-close-menu) !{link.title}

@@ -44,7 +44,7 @@ mixin about({ className = false })
                         .about__info
                             p.about__description.about__description_bold ТОО «НИЦ&nbsp;«Уголь» является одним из передовых предприятий, осуществляющих деятельность по исследованию, подтверждению соответствия угля, разработке стандартов на угли и продукты их переработки. 
                             p.about__description.about__description_small Выполняем заказы государственных органов и хозяйствующих субъектов в рамках Республики Казахстан, СНГ, ЕАЭС, ВТО. Разрабатывает правовые, нормативные, технические, научные документы, осуществляет сертификацию, классификацию, кодификацию, идентификацию углей и продуктов их переработки, проводит около 100 видов анализов и испытаний, услуг.
-                            a.about__link.link.link_underline.link_arrow(href="") Подробнее о компании <span class="link__arrow">→</span>
+                            button.about__link.link.link_underline.link_arrow(data-custom-open='modal-about') Подробнее о компании <span class="link__arrow">→</span>
                 .about__advantages-col
                     img.about__map(src="./img/about_map.png" srcset="./img/about_map@2x.png 2x" alt="Карта Казахстана с отметками клиентов из разных городов")
                     ul.about__advantages
@@ -54,3 +54,4 @@ mixin about({ className = false })
                                 description: advantage.description,
                                 className: 'about__advantage',
                             })
+    

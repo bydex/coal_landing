@@ -8,7 +8,7 @@ mixin top-line({ className = false })
             +icon({ 
                 iconName: 'logo', 
                 viewBoxName: '0 0 43 41', 
-                className: 'top-line__logo'
+                className: 'top-line__logo logo logo_light'
             })
         .top-line__description !{config.slogan}
         .top-line__socials
@@ -42,7 +42,10 @@ mixin top-line({ className = false })
         .top-line__btn-wrapper
             +btn({ 
                 className: 'top-line__btn btn_size_md btn_theme_alpha', 
-                title: 'Перезвонить'
+                title: 'Перезвонить',
+                attributesName: {
+                    'data-custom-open': 'modal-request'
+                }
             })
         +hamburger({
             idName: "hamburger-menu",

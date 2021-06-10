@@ -3,8 +3,15 @@ import Nav from "%components%/nav/nav";
 
 const nav = new Nav();
 
-new Hamburger({
+const hamburger = new Hamburger({
     button: "#hamburger-menu",
     onOpen: nav.open.bind(nav),
     onClose: nav.close.bind(nav),
-}).init();
+});
+hamburger.init();
+
+document.addEventListener("click", (event) => {
+    if (event.target.closest("[data-close-menu]")) {
+        hamburger.close();
+    }
+});

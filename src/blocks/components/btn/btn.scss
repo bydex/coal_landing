@@ -1,10 +1,9 @@
 .btn {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
-    text-align: center;
+    justify-content: center;
     border: 2px solid $alpha;
+    text-align: center;
     border-radius: 50px;
     cursor: pointer;
     user-select: none;
@@ -14,11 +13,12 @@
     }
 
     &__icon {
+        width: 28px;
+        margin-top: -4px;
+        margin-right: 10px;
         @media (max-width: $break_md) {
             width: 17px;
         }
-        margin-top: -4px;
-        width: 28px;
     }
 }
 .btn:active {
@@ -33,15 +33,18 @@
     line-height: 125%;
 }
 .btn_size_md {
+    padding: 8.5px 21.5px;
+    font-weight: 600;
+    line-height: 122%;
     @media (max-width: $break_md) {
         padding: 6.5px 13px;
         font-size: rem(11);
     }
-    padding: 8.5px 21.5px;
-    font-weight: 600;
-    line-height: 122%;
 }
 .btn_size_lg {
+    padding: 23px 24px;
+    font-weight: 600;
+    line-height: 122%;
     @media (max-width: $break_lg) {
         padding: 16px 16px;
     }
@@ -49,9 +52,6 @@
         padding: 8px 17.5px;
         font-size: rem(13);
     }
-    padding: 23px 24px;
-    font-weight: 600;
-    line-height: 122%;
 }
 .btn_size_xl {
     padding: 22px 46px 20px 46px;
@@ -79,6 +79,17 @@
         color: $light;
         background-color: transparent;
         border-color: $light;
+    }
+}
+.btn_theme_light-dark {
+    color: $dark;
+    border-color: $light;
+    background-color: $light;
+
+    &:hover {
+        color: $dark;
+        background-color: transparent;
+        border-color: $dark;
     }
 }
 .btn_theme_alpha-hover {

@@ -38,9 +38,149 @@ body {
     flex-grow: 1;
 }
 
+.overflow-hidden {
+    height: 100%;
+    overflow: hidden;
+    padding-right: 18px;
+}
+
 ::selection {
     color: $light;
     background-color: $alpha;
+}
+
+@mixin h1() {
+    @media (max-width: $break_lg) {
+        font-size: rem(40);
+    }
+    @media (max-width: $break_md) {
+        font-size: rem(32);
+    }
+    @media (max-width: $break_sm) {
+        font-size: rem(30);
+    }
+    font-size: rem(46);
+    font-weight: 700;
+    line-height: 109%;
+}
+@mixin h2() {
+    @media (max-width: $break_lg) {
+        font-size: rem(32);
+    }
+    @media (max-width: $break_md) {
+        font-size: rem(28);
+    }
+    @media (max-width: $break_sm) {
+        font-size: rem(24);
+    }
+    font-size: rem(42);
+    font-weight: 700;
+    line-height: 121%;
+}
+@mixin h3() {
+    @media (max-width: $break_lg) {
+        font-size: rem(22);
+    }
+    @media (max-width: $break_md) {
+        font-size: rem(18);
+    }
+    @media (max-width: $break_sm) {
+        font-size: rem(16);
+    }
+    font-size: rem(24);
+    line-height: 133%;
+}
+@mixin h4() {
+    @media (max-width: $break_lg) {
+        font-size: rem(20);
+    }
+    @media (max-width: $break_md) {
+        font-size: rem(16);
+    }
+    font-size: rem(22);
+    line-height: 127%;
+}
+@mixin p() {
+    @media (max-width: $break_lg) {
+        font-size: rem(20);
+    }
+    @media (max-width: $break_md) {
+        font-size: rem(16);
+    }
+    font-size: rem(22);
+    line-height: 160%;
+}
+@mixin p-sm() {
+    @media (max-width: $break_sm) {
+        font-size: rem(11);
+    }
+    font-size: rem(13);
+    line-height: 154%;
+}
+@mixin p-bold() {
+    @media (max-width: $break_sm) {
+        font-size: rem(13);
+    }
+    font-weight: 600;
+    line-height: 162%;
+}
+
+.p-bold {
+    @include p-bold();
+}
+
+.p-sm {
+    @include p-sm();
+}
+
+.custom-scroll {
+    max-height: 333px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $alpha;
+        height: 50px;
+        border-radius: 50px;
+    }
+}
+
+.custom-scroll {
+    position: relative;
+
+    .fakeScroll {
+        &__wrap,
+        &__content {
+            max-height: inherit;
+        }
+
+        &__track {
+            padding-top: 26px;
+            padding-bottom: 26px;
+            width: 4px;
+            background: rgba($light, 0.1);
+            border: 1px solid rgba($light, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        &__bar {
+            height: 20px !important;
+            width: 20px;
+            background-color: $alpha;
+            border-radius: 50%;
+            right: 9px;
+            transform: translateY(-50%);
+        }
+    }
 }
 
 .link {
@@ -54,7 +194,21 @@ body {
         color: $alpha;
     }
 
+    &_alpha {
+        color: $alpha;
+
+        &:hover {
+            color: $light;
+        }
+    }
+
     &_size {
+        &_xl {
+            @media (max-width: $break_xss) {
+                font-size: rem(20);
+            }
+            font-size: rem(24);
+        }
         &_large {
             font-size: rem(18);
             font-weight: 700;
@@ -176,14 +330,19 @@ body {
     &__pagination {
         display: flex;
         align-items: flex-end;
-        gap: 12px;
+        margin-right: 46px;
     }
 
     &__pagination-item_active {
+        margin-right: 12px;
         color: $alpha;
         font-weight: 700;
         font-size: rem(32);
         line-height: 85%;
+    }
+
+    &__pagination-item:last-child {
+        margin-left: 12px;
     }
 
     &__control-panel {
@@ -192,7 +351,6 @@ body {
         }
         display: flex;
         align-items: center;
-        gap: 46px;
         margin-bottom: 16px;
 
         &:last-child {
@@ -202,11 +360,14 @@ body {
 
     &__controls {
         display: flex;
-        gap: 18px;
+        margin-left: -9px;
+        margin-right: -9px;
     }
 
     &__control {
         display: block;
+        margin-left: 9px;
+        margin-right: 9px;
     }
 
     &__control-icon {
@@ -294,78 +455,43 @@ body {
     }
 }
 
-@mixin h1() {
-    @media (max-width: $break_lg) {
-        font-size: rem(40);
-    }
-    @media (max-width: $break_md) {
-        font-size: rem(32);
-    }
-    @media (max-width: $break_sm) {
-        font-size: rem(30);
-    }
-    font-size: rem(46);
-    font-weight: 700;
-    line-height: 109%;
+.preloader {
+    position: relative;
 }
-@mixin h2() {
-    @media (max-width: $break_lg) {
-        font-size: rem(32);
-    }
-    @media (max-width: $break_md) {
-        font-size: rem(28);
-    }
-    @media (max-width: $break_sm) {
-        font-size: rem(24);
-    }
-    font-size: rem(42);
-    font-weight: 700;
-    line-height: 121%;
+.preloader:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    margin-left: -24px;
+    margin-top: -24px;
+    border-radius: 50%;
+    border: 6px solid currentColor;
+    border-color: currentColor transparent currentColor transparent;
+    animation: preloader 1.2s linear infinite;
 }
-@mixin h3() {
-    @media (max-width: $break_lg) {
-        font-size: rem(22);
+@keyframes preloader {
+    0% {
+        transform: rotate(0deg);
     }
-    @media (max-width: $break_md) {
-        font-size: rem(18);
+    100% {
+        transform: rotate(360deg);
     }
-    @media (max-width: $break_sm) {
-        font-size: rem(16);
-    }
-    font-size: rem(24);
-    line-height: 133%;
 }
-@mixin h4() {
-    @media (max-width: $break_lg) {
-        font-size: rem(20);
+
+.logo {
+    &_dark {
+        fill: $dark;
+        color: $light;
     }
-    @media (max-width: $break_md) {
-        font-size: rem(16);
+
+    &_light {
+        fill: $light;
+        color: $dark;
     }
-    font-size: rem(22);
-    line-height: 127%;
-}
-@mixin p() {
-    @media (max-width: $break_lg) {
-        font-size: rem(20);
-    }
-    @media (max-width: $break_md) {
-        font-size: rem(16);
-    }
-    font-size: rem(22);
-    line-height: 160%;
-}
-@mixin p-sm() {
-    @media (max-width: $break_sm) {
-        font-size: rem(11);
-    }
-    font-size: rem(13);
-    line-height: 123%;
-}
-@mixin p-bold() {
-    @media (max-width: $break_sm) {
-        font-size: rem(13);
-    }
-    font-weight: 600;
-    line-height: 162%;
 }

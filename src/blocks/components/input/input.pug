@@ -1,8 +1,11 @@
-mixin input({ className = false, typeName = "text", placeholder = false, iconName, viewBoxName, })
-    label.input(class=className)
-        +icon({
-            iconName,
-            viewBoxName,
-            className: "input__icon"
-        })
-        input.input__field(type=typeName placeholder=placeholder)
+mixin input({ className = false, typeName = "text", placeholder = false, iconName = false, viewBoxName, tag = "input" })
+    label.input(class=[className, {'input_icon': !!iconName}])
+        if (tag === "input")
+            input.input__field(type=typeName placeholder=placeholder)
+            +icon({
+                iconName,
+                viewBoxName,
+                className: "input__icon"
+            })
+        else
+            textarea.input__field(placeholder=placeholder)

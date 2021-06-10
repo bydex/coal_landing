@@ -1,0 +1,43 @@
+mixin modal-request({ className = false })
+    include ../../components/modal/modal
+    include ../../components/input/input
+    include ../../components/checkbox/checkbox
+
+    +modal({
+        modalName: 'modal-request',
+        className: 'modal_center modal_lg',
+        title: 'Оставить заявку',
+        description: 'Заполните и отправьте свои контакты и опишите задачу, мы перезвоним в ближайшее время'
+    })      
+        form.modal-request__form
+            +input({
+                iconName: 'user',
+                viewBoxName: '0 0 16 16',
+                className: 'modal-request__input input_md input_gamma',
+                placeholder: 'Ваше имя'
+            })
+            +input({
+                iconName: 'phone',
+                typeName: 'tel',
+                viewBoxName: '0 0 16 16',
+                className: 'modal-request__input input_md input_gamma',
+                placeholder: 'Ваш телефон'
+            })
+            +input({
+                tag: 'textarea',
+                className: 'modal-request__input modal-request__textarea input_md input_gamma',
+                placeholder: 'Кратко опишите вашу задачу'
+            })
+            fieldset.modal-request__form-footer
+                +checkbox({
+                    className: 'modal-request__checkbox checkbox_alpha',
+                })
+                +btn({ 
+                    icon: {
+                        position: 'left',
+                        iconName: 'request',
+                        viewBoxName: '0 0 31 27'
+                    },
+                    className: 'modal-request__btn btn_size_lg btn_theme_alpha', 
+                    title: 'Оставить заявку',
+                })

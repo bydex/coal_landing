@@ -20,12 +20,12 @@
     }
 
     &__form-col {
-        @media (max-width: $break_xl) {
-            margin-bottom: 32px;
-        }
         @include col();
         @include size(8);
         @include size-xl(12);
+        @media (max-width: $break_xl) {
+            margin-bottom: 32px;
+        }
     }
 
     &__form {
@@ -37,31 +37,39 @@
     }
 
     &__form-row {
+        display: flex;
+        margin-right: -20px;
+        margin-left: -20px;
         @media (max-width: $break_md) {
             flex-direction: column;
             max-width: 330px;
         }
-        display: flex;
-        gap: 20px;
     }
 
     &__input {
-        @media (max-width: $break_md) {
-            max-width: 100%;
-        }
         flex-grow: 1;
         max-width: 280px;
+        margin-right: 10px;
+        margin-left: 10px;
+        @media (max-width: $break_md) {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &__btn {
+        margin-right: 10px;
+        margin-left: 10px;
     }
 
     &__checkbox {
+        max-width: 250px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 12px;
         @media (max-width: $break_md) {
             max-width: 100%;
         }
-        max-width: 250px;
-        margin-top: 12px;
     }
 
     &__info-col {
@@ -73,7 +81,6 @@
     &__card {
         display: flex;
         align-items: center;
-        gap: 20px;
     }
 
     &__card-img {
@@ -81,6 +88,7 @@
     }
 
     &__card-info {
+        margin-left: 20px;
     }
 
     &__card-description {

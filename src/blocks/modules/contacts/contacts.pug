@@ -1,0 +1,78 @@
+mixin contacts({ className = false })
+    include ./data
+    include ../../components/map/map
+
+    section.contacts(class=className id="contacts")
+        .contacts__container
+            h2.contacts__title Контактная информация
+            .contacts__row
+                .contacts__info-col
+                    h3.contacts__subtitle Звоните
+                    ul.contacts__links
+                        li.contacts__link-item 
+                            a.contacts__link.link.link_size_xl(href=`tel:${config.phone[0].tel}`) !{config.phone[0].number}
+                            small.contacts__link-description (мобильный)
+                        li.contacts__link-item 
+                            a.contacts__link.link.link_size_large(href=`tel:${config.phone[1].tel}`) !{config.phone[1].number}
+                            small.contacts__link-description (городской)
+                        li.contacts__link-item 
+                            a.contacts__link.link.link_size_large(href=`tel:${config.phone[2].tel}`) !{config.phone[2].number}
+                            small.contacts__link-description (городской)
+                    p.contacts__description Работаем Пн-Пт: 8:30-17:30, Сб-Вс выходные
+                    p.contacts__bold-title Пишите в мессенджер, ответим оперативно в течении 30 минут 
+                    ul.contacts__socials-list
+                        li.contacts__socials-item 
+                            +social({ 
+                                hrefName: config.socials.whatsapp.href,
+                                className: 'contacts__social', 
+                                iconName: config.socials.whatsapp.iconName,
+                                viewBoxName: '0 0 15 15'
+                            })
+                        li.contacts__socials-item 
+                            +social({
+                                hrefName: config.socials.telegram.href,
+                                className: 'contacts__social',
+                                iconName: config.socials.telegram.iconName,
+                                viewBoxName: '0 0 15 15'
+                            })
+                    p.contacts__bold-title Пишите на e-mail
+                    a.contacts__mail.link.link_underline.link_alpha(href="mailto:info@nicugol.kz") info@nicugol.kz
+                    a.contacts__mail.link.link_underline.link_alpha(href="mailto:nicugol@yandex.ru") nicugol@yandex.ru
+                .contacts__gallery-col
+                    h3.contacts__subtitle Наша лаборатория и офисы
+                    p.contacts__description Мы имеем 1 лабораторию, оборудованную техникой, 3 административных офиса. Какой-то полезный текст про лабораторию, про офисы.
+                    .contacts__gallery.gallery(id="contacts-gallery")
+                        .gallery__footer
+                            .gallery__control-panel
+                                .gallery__pagination 
+                                    span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                    | /
+                                    span.gallery__pagination-item(id="total-pagination") 03
+                                .gallery__controls(id="controls")
+                                    button.gallery__control.link
+                                        +icon({
+                                            iconName: 'arrow-left',
+                                            viewBoxName: '0 0 17 16',
+                                            className: 'gallery__control-icon'
+                                        })
+                                    button.gallery__control.link
+                                        +icon({
+                                            iconName: 'arrow-right',
+                                            viewBoxName: '0 0 17 16',
+                                            className: 'gallery__control-icon'
+                                        })
+                        .gallery__list
+                            each slide in contactsAdvantages
+                                .gallery__slide
+                                    .contacts__slide-inner
+                                        img.contacts__slide-img(
+                                            src=`./img/${slide.imgName}.jpg` 
+                                            srcset=`./img/${slide.imgName}@2x.jpg 2x` 
+                                            alt=`Картинка преимущества ${slide.title}`
+                                        )
+                .contacts__map-col
+                    h3.contacts__subtitle Наш адрес
+                    p.contacts__description г.Караганда, проспект Н.Назарбаева, 74а (вход со стороны улицы Гастелло)
+                    +map({
+                        className: 'contacts__map'
+                    })

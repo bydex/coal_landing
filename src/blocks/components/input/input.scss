@@ -1,68 +1,69 @@
 .input {
-    position: relative;
     display: block;
+    position: relative;
 
     &_lg {
-        .input__field {
-            @media (max-width: $break_sm) {
-                height: 40px;
-            }
-            height: 70px;
-        }
         .input__icon {
             padding-left: 25px;
         }
-        .input__field,
-        .input__placeholder {
+        .input__field {
+            min-height: 70px;
+            padding-top: 26px;
+            padding-bottom: 26px;
+            padding-right: 27px;
+            padding-left: 25px;
             @media (max-width: $break_sm) {
+                height: 40px;
                 padding-right: 15px;
                 padding-left: 19px;
             }
-            padding-top: 11px;
-            padding-bottom: 11px;
-            padding-right: 27px;
+        }
+
+        &.input_icon .input__field {
             padding-left: 48px;
         }
     }
 
     &_md {
         .input__field {
+            min-height: 50px;
+            padding-top: 17px;
+            padding-bottom: 17px;
+            padding-right: 20px;
+            padding-left: 20px;
             @media (max-width: $break_sm) {
                 height: 40px;
-            }
-            height: 60px;
-        }
-        .input__field,
-        .input__placeholder {
-            @media (max-width: $break_sm) {
                 padding-right: 15px;
                 padding-left: 19px;
             }
-            padding-top: 11px;
-            padding-bottom: 11px;
-            padding-right: 27px;
-            padding-left: 27px;
+        }
+
+        .input__icon {
+            padding-left: 16px;
+        }
+
+        &.input_icon .input__field {
+            padding-left: 38px;
         }
     }
 
     &_sm {
-        .input__field,
-        .input__placeholder {
-            @media (max-width: $break_sm) {
-                padding-right: 15px;
-                padding-left: 15px;
-                height: 40px;
-            }
+        .input__field {
+            height: 50px;
             padding-top: 11px;
             padding-bottom: 11px;
             padding-right: 20px;
             padding-left: 20px;
-            height: 50px;
+            @media (max-width: $break_sm) {
+                height: 40px;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
         }
         &.input_filled .input__field {
+            padding-top: 20px;
             @media (max-width: $break_sm) {
             }
-            padding-top: 20px;
         }
     }
 
@@ -70,19 +71,24 @@
         .input__field {
             background-color: $alpha-lighter;
 
-            &::placeholder,
-            & {
+            &::placeholder, & {
                 color: $dark;
             }
         }
     }
 
-    &_gray {
+    &_gamma {
+        color: $gamma-normal;
+
         .input__field {
-            background-color: $light;
+            background-color: $gamma-darker;
+
+            &:focus-within, &:focus-within ~ svg {
+                color: $light;
+            }
         }
-        .input__placeholder {
-            color: $dark;
+        &.input_filled, &.input_filled svg {
+            color: $light;
         }
     }
 
@@ -101,48 +107,26 @@
         outline: none;
         transition: {
             duration: 0.3s;
-            property: box-shadow;
+            property: box-shadow, color;
         }
 
-        &:focus-within {
-            box-shadow: 0px 10px 20px rgba($light, 0.4);
-        }
-        &::placeholder,
-        & {
+        &::placeholder, & {
+            font-size: rem(14);
             @media (max-width: $break_sm) {
                 font-size: rem(12);
             }
-            font-weight: 500;
-            font-size: rem(14);
         }
     }
 
-    &__field:focus,
-    &_filled &__field {
+    &__field:focus, &_filled &__field {
         & ~ .input__placeholder {
-            font-size: rem(11);
             transform: translateY(-30%);
-        }
-    }
-
-    &__placeholder {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        font-size: rem(14);
-        font-weight: 500;
-        pointer-events: none;
-        user-select: none;
-        transition: {
-            property: font-size, transform;
-            duration: 0.3s;
+            font-size: rem(11);
         }
     }
 
     &__error {
+        position: absolute;
         margin-left: 19px;
         margin-top: 2px;
         color: #ff0000;
@@ -151,20 +135,23 @@
     }
 
     &__icon {
+        box-sizing: content-box;
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         width: 16px;
+        transform: translateY(-50%);
         padding-left: inherit;
-        box-sizing: content-box;
+        transition: {
+            duration: 0.3s;
+            property: color;
+        }
     }
 
     &_error {
         .input__field {
             box-shadow: 0 0 2px #ff0000;
         }
-        &,
-        .input__placeholder {
+        &, .input__placeholder {
             color: #ff0000;
         }
     }

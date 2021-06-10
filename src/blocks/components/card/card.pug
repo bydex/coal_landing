@@ -1,4 +1,4 @@
-mixin card({ className = false, iconName, title, description, advantage })
+mixin card({ className = false, iconName, title, description, advantage, modalName })
     li.card(class=className)
         .card__img 
             +icon({
@@ -19,6 +19,9 @@ mixin card({ className = false, iconName, title, description, advantage })
             .card__footer 
                 +btn({ 
                     className: 'card__btn btn_size_md btn_theme_alpha-hover', 
-                    title: 'Заказать услугу'
+                    title: 'Заказать услугу',
+                    attributesName: {
+                        'data-custom-open': 'modal-request',
+                    }
                 })
-                a.card__link.link.link_underline.link_arrow(href="") Подробнее <span class="link__arrow">→</span>
+                button.card__link.link.link_underline.link_arrow(data-custom-open=`modal-${iconName}`) Подробнее <span class="link__arrow">→</span>

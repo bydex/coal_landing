@@ -1,0 +1,129 @@
+.contacts {
+    padding: {
+        top: 60px;
+        bottom: 40px;
+    }
+    color: $light;
+    background: {
+        color: $dark;
+    }
+
+    &__container {
+        @include container();
+    }
+
+    &__title {
+        @include h2();
+        margin-bottom: 20px;
+        color: $alpha;
+    }
+
+    &__row {
+        @include row-flex();
+    }
+
+    &__info-col {
+        @include col();
+        @include size(4);
+        @include size-lg(6);
+        @include size-md(12);
+    }
+
+    &__links {
+        margin-bottom: 23px;
+    }
+
+    &__link-item {
+        margin-bottom: 6px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        font-weight: 700;
+    }
+
+    &__link-description {
+        margin-left: 11px;
+        font-size: rem(13);
+    }
+
+    &__subtitle {
+        margin-bottom: 10px;
+        font-size: rem(16);
+        font-weight: 600;
+    }
+
+    &__description {
+        margin-bottom: 16px;
+        line-height: 150%;
+    }
+
+    &__socials-list {
+        display: flex;
+        margin-bottom: 22px;
+    }
+
+    &__socials-item {
+        margin-right: 12px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__bold-title {
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    &__mail {
+        display: block;
+        margin-bottom: 3px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__gallery-col {
+        @include col();
+        @include size(4);
+        @include size-lg(6);
+        @include size-md(12);
+        display: flex;
+        flex-direction: column;
+        @media (max-width: $break_lg) {
+            margin-top: 32px;
+        }
+    }
+
+    &__gallery {
+        margin-top: auto;
+
+        .gallery {
+            &__footer {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__map-col {
+        @include col();
+        @include size(4);
+        @include size-lg(6);
+        @include size-md(12);
+        @media (max-width: $break_lg) {
+            margin-top: 32px;
+        }
+    }
+
+    &__map {
+        height: 245px;
+        @media (max-width: $break_sm) {
+            height: 218px;
+        }
+    }
+}

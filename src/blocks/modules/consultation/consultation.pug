@@ -10,13 +10,14 @@ mixin consultation({ className = false })
                         legend.consultation__title <b>Для бесплатной консультации</b> нужен только ваш телефон
                         fieldset.consultation__form-row 
                             +input({
+                                typeName: 'tel',
                                 iconName: 'phone',
                                 viewBoxName: '0 0 16 16',
                                 className: 'consultation__input input_lg input_alpha',
                                 placeholder: 'Ваш телефон'
                             })
                             +btn({ 
-                                className: 'consultation__btn btn_size_lg btn_theme_light', 
+                                className: 'consultation__btn btn_size_lg btn_theme_light-dark', 
                                 title: 'Оставить заявку',
                             })
                             +checkbox({
@@ -26,7 +27,7 @@ mixin consultation({ className = false })
                     .consultation__card
                         img.consultation__card-img(
                             src="./img/consultation_manager.png" 
-                            srcset="./img/consultation_manager@2x.png"
+                            srcset="./img/consultation_manager@2x.png 2x"
                             alt="Девушка в офисе держит проводной телефон возле лица"
                         )
                         .consultation__card-info 

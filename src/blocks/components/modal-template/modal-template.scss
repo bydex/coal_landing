@@ -1,0 +1,63 @@
+.modal-template {
+    .modal {
+        &__title {
+            @include h2();
+        }
+
+        &__description {
+            @include h4();
+            font-weight: 600;
+        }
+    }
+
+    &__row {
+        @include row-flex();
+    }
+
+    &__gallery-col {
+        @include col();
+        @include size(5.5);
+        @include size-md(12);
+        @media (max-width: $break_md) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__gallery {
+        margin-bottom: 40px;
+
+        .gallery {
+            &__footer {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__slide-img {
+        max-width: 100%;
+    }
+
+    &__advantages {
+        @include row-flex();
+    }
+
+    &__advantage {
+        @include col();
+        @include size(6);
+        margin-top: 16px;
+
+        &:nth-child(1), &:nth-child(2) {
+            margin-top: 0;
+        }
+    }
+
+    &__info-col {
+        @include col();
+        @include size(6.5);
+        @include size-md(12);
+    }
+
+    &__content {
+        margin-bottom: 36px;
+    }
+}

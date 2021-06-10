@@ -1,0 +1,66 @@
+mixin modal-template({ className = false, modalName, title, description, slides, iconName = false })
+    include ../../modules/about/data
+    include ../modal/modal
+    include ../input/input
+    include ../checkbox/checkbox
+
+    +modal({
+        modalName,
+        className: 'modal_xl modal-template',
+        title,
+        description,
+        iconName
+    })      
+        .modal-template__row 
+            .modal-template__gallery-col
+                .modal-template__gallery.gallery(id="modal-template-gallery")
+                    .gallery__footer
+                        .gallery__control-panel
+                            .gallery__pagination 
+                                span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                | /
+                                span.gallery__pagination-item(id="total-pagination") 03
+                            .gallery__controls(id="controls")
+                                button.gallery__control.link
+                                    +icon({
+                                        iconName: 'arrow-left',
+                                        viewBoxName: '0 0 17 16',
+                                        className: 'gallery__control-icon'
+                                    })
+                                button.gallery__control.link
+                                    +icon({
+                                        iconName: 'arrow-right',
+                                        viewBoxName: '0 0 17 16',
+                                        className: 'gallery__control-icon'
+                                    })
+                    .gallery__list
+                        each slide in slides
+                            .gallery__slide
+                                .modal-template__slide-inner
+                                    img.modal-template__slide-img(
+                                        src=`./img/${slide.imgName}.jpg` 
+                                        srcset=`./img/${slide.imgName}@2x.jpg 2x` 
+                                        alt=`Картинка преимущества ${slide.title}`
+                                    )
+                ul.modal-template__advantages
+                    each advantage in aboutAdvantages
+                        +advantage({
+                            title: advantage.title,
+                            description: advantage.description,
+                            className: 'modal-template__advantage',
+                        })
+            .modal-template__info-col
+                .modal-template__content.content.custom-scroll
+                    block
+                +btn({ 
+                    icon: {
+                        position: 'left',
+                        iconName: 'request',
+                        viewBoxName: '0 0 31 27'
+                    },
+                    className: 'modal-template__btn btn_size_lg btn_theme_alpha', 
+                    title: 'Оставить заявку',
+                    attributesName: {
+                        'data-custom-open': 'modal-request'
+                    }
+                })

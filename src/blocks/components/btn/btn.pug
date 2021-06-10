@@ -1,6 +1,6 @@
-mixin btn({className = ['btn_theme_alpha', 'btn_size_sm'], title = false, link = false, target = false, download = false, modalId = false, icon = false })
+mixin btn({className = ['btn_theme_alpha', 'btn_size_sm'], title = false, link = false, target = false, download = false, attributesName = {}, icon = false })
     if (link)
-        a.btn(href=link class=className target=target download=download)
+        a.btn(href=link class=className target=target download=download)&attributes(attributesName)
             if (icon && icon.position === 'left')
                 +icon({
                     className: 'btn__icon',
@@ -15,7 +15,7 @@ mixin btn({className = ['btn_theme_alpha', 'btn_size_sm'], title = false, link =
                     viewBoxName: icon.viewBoxName
                 })
     else
-        button.btn(class=className data-modal-id=modalId)
+        button.btn(class=className data-modal-id=modalId)&attributes(attributesName)
             if (icon && icon.position === 'left')
                 +icon({
                     className: 'btn__icon',

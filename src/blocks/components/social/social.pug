@@ -1,3 +1,3 @@
 mixin social({ className = false, iconName, viewBoxName, hrefName })
-    a.social(class=className href=hrefName target="_blank")
+    a.social(class=className href=hrefName target="_blank" rel="noopener")
         +icon({ iconName, viewBoxName, className: 'social__icon' })

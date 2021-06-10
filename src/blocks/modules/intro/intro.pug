@@ -17,15 +17,18 @@ mixin intro({ className = false })
                             })
                     .intro__buttons
                         +btn({ 
-                            className: 'top-line__btn btn_size_lg btn_theme_alpha-hover', 
+                            className: 'intro__btn btn_size_lg btn_theme_alpha-hover', 
                             title: 'Оставить заявку',
                             icon: {
                                 position: 'left',
                                 iconName: 'request',
                                 viewBoxName: '0 0 31 27'
+                            },
+                            attributesName: {
+                                'data-custom-open': 'modal-call'
                             }
                         })
-                        a.top-line__link.link.link_underline.link_arrow(href="") Наши услуги <span class="link__arrow">→</span>
+                        a.intro__link.link.link_underline.link_arrow(href="#services") Наши услуги <span class="link__arrow">→</span>
                 .intro__img-col
                     .intro__gallery.gallery(id="intro-gallery")
                         .gallery__rounds.rounds
@@ -59,7 +62,7 @@ mixin intro({ className = false })
                                 each slide in sliderInfo
                                     .gallery__description !{slide.description}
                                     
-        a.intro__mouse(href="")
+        a.intro__mouse(href="#services")
             +icon({
                 iconName: 'mouse',
                 className: 'intro__mouse-icon',

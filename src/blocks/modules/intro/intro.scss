@@ -1,4 +1,7 @@
 .intro {
+    position: relative;
+    min-height: 100vh;
+    color: $light;
     @media (max-width: $break_lg) {
         padding: {
             top: 120px;
@@ -9,20 +12,6 @@
         padding: {
             bottom: 111px;
         }
-    }
-    position: relative;
-    padding: {
-        top: 217px;
-        bottom: 81px;
-    }
-    min-height: 100vh;
-    color: $light;
-    background: {
-        color: $dark;
-        image: url(../img/intro_background.jpg);
-        size: cover;
-        position: top center;
-        attachment: fixed;
     }
 
     &__container {
@@ -41,14 +30,14 @@
     }
 
     &__img-col {
-        @media (max-width: $break_md) {
-            margin-top: 55px;
-        }
         @include col();
         @include size(4);
         @include size-lg(5);
         @include size-md(12);
         margin-top: 33px;
+        @media (max-width: $break_md) {
+            margin-top: 55px;
+        }
     }
 
     &__title {
@@ -58,58 +47,65 @@
     }
 
     &__description {
-        @media (max-width: $break_lg) {
-            margin-bottom: 20px;
-        }
         @include h4();
         margin-bottom: 47px;
         font-weight: 600;
         line-height: 145%;
+        @media (max-width: $break_lg) {
+            margin-bottom: 20px;
+        }
     }
 
     &__advantages {
+        display: flex;
+        margin-bottom: 32px;
+        margin-left: -10px;
+        margin-right: -10px;
         @media (max-width: $break_lg) {
             flex-wrap: wrap;
-            gap: 10px;
+            margin-left: -5px;
+            margin-right: -5px;
         }
-        display: flex;
-        gap: 21px;
-        margin-bottom: 32px;
     }
 
     &__advantage {
+        margin-right: 10px;
+        margin-left: 10px;
         @media (max-width: $break_lg) {
             flex-basis: 100%;
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
         }
         @media (max-width: $break_md) {
-            max-width: 60%;
             flex-basis: auto;
             flex-grow: 1;
+            max-width: 60%;
         }
     }
 
     &__buttons {
         display: flex;
         align-items: center;
-        gap: 21px;
     }
 
     &__btn {
+        margin-right: 21px;
     }
 
     &__link {
     }
 
     &__gallery {
+        max-width: 240px;
+        margin-left: auto;
+        margin-right: auto;
         @media (max-width: $break_md) {
             max-width: 310px;
         }
         @media (max-width: $break_sm) {
             max-width: 200px;
         }
-        max-width: 240px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     &__gallery-list {
@@ -117,31 +113,42 @@
     }
 
     &__gallery-footer {
+        position: relative;
+        right: -18px;
         @media (max-width: $break_sm) {
             right: 0;
         }
-        position: relative;
-        right: -18px;
     }
 
     &__mouse {
+        display: block;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
         @media (max-width: $break_lg) {
             bottom: 40px;
         }
         @media (max-width: $break_md) {
             bottom: 31px;
         }
-        position: absolute;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: block;
     }
 
     &__mouse-icon {
+        width: 20px;
         @media (max-width: $break_md) {
             width: 16px;
         }
-        width: 20px;
+    }
+    padding: {
+        top: 217px;
+        bottom: 81px;
+    }
+    background: {
+        color: $dark;
+        image: url(../img/intro_background.jpg);
+        size: cover;
+        position: top center;
+        attachment: fixed;
     }
 }

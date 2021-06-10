@@ -1,2 +1,16 @@
 mixin footer({ className = false })
-    .footer footer
+    footer.footer   
+        .footer__container 
+            .footer__row 
+                .footer__logo-col 
+                    +icon({
+                        iconName: 'logo',
+                        viewBoxName: '0 0 43 41',
+                        className: 'footer__logo logo logo_dark'
+                    })
+                    p.footer__description !{config.slogan}
+                .footer__policy-col 
+                    p.footer__policy-title ©2021. Все права защищены. 
+                    button.link.link_underline(data-custom-open='modal-policy') Политика конфеденциальности данных
+                p.footer__copyright 
+                    | Сделано в <a class="link link_underline" href="https://webpeppers.kz" target="_blank" rel="noopener">Webpeppers.kz</a>

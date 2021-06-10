@@ -1,26 +1,26 @@
 .nav {
     @media (max-width: $break_lg) {
         position: fixed;
+        z-index: 10;
         top: 0;
         right: 0;
-        z-index: 10;
-        padding: 16px 32px;
-        height: 100%;
         min-width: 295px;
         max-width: 295px;
-        overflow-y: auto;
+        height: 100%;
+        padding: 16px 32px;
         transform: translateX(100%);
+        overflow-y: auto;
         background: {
+            position: calc(-100% - 205px) calc(100% + 93px);
             color: $alpha;
             image: url(../img/consultation_backgroung.svg);
             repeat: no-repeat;
             size: 495px 394px;
-            position: calc(-100% - 205px) calc(100% + 93px);
         }
         transition: {
             property: transform;
-            duration: .5s;
-        };
+            duration: 0.5s;
+        }
 
         &_active {
             transform: translateX(0);
@@ -28,16 +28,15 @@
     }
 
     &__header {
+        display: none;
         @media (max-width: $break_lg) {
             display: block;
             margin-bottom: 25px;
         }
-        display: none;
     }
 
     &__info {
         display: flex;
-        gap: 20px;
     }
 
     &__phones {
@@ -73,49 +72,64 @@
 
     &__socials {
         display: flex;
-        gap: 10px;
+        margin-right: 20px;
     }
 
-    
-    
+    &__socials-item {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
     &__inner {
+        background-color: rgba($light, 0.1);
+        border: 1px solid rgba($light, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
         @media (max-width: $break_lg) {
+            border: 0;
             padding: 0;
             background-color: transparent;
-            border: 0;
             backdrop-filter: none;
         }
 
         padding: {
-            left: 32px;
             right: 32px;
+            left: 32px;
         }
-        background-color: rgba($light, .1);
-        border: 1px solid rgba($light, .1);
-        backdrop-filter: blur(10px);
-        border-radius: 50px;
     }
 
     &__list {
-        @media (max-width: $break_xl) {
-            gap: 24px;
-        }
-        @media (max-width: $break_lg) {
-            display: block;
-        }
         display: flex;
-        gap: 42px;
-    }
-    
-    &__item {
+        margin-left: -20px;
+        margin-right: -20px;
+        @media (max-width: $break_xl) {
+            margin-right: -12px;
+            margin-left: -12px;
+        }
         @media (max-width: $break_lg) {
             display: block;
         }
+    }
+
+    &__item {
         display: flex;
         align-items: center;
+        margin-right: 20px;
+        margin-left: 20px;
+        @media (max-width: $break_xl) {
+            margin-right: 12px;
+            margin-left: 12px;
+        }
+        @media (max-width: $break_lg) {
+            display: block;
+        }
     }
 
     &__link {
+        display: block;
         @media (max-width: $break_xl) {
             font-size: rem(14);
             white-space: nowrap;
@@ -129,18 +143,17 @@
                 color: $light;
             }
         }
-        display: block;
+
+        &:hover {
+            color: $alpha;
+        }
         padding: {
             top: 15px;
             bottom: 15px;
         }
         transition: {
-            duration: .3s;
+            duration: 0.3s;
             property: color;
-        }
-
-        &:hover {
-            color: $alpha;
         }
     }
 

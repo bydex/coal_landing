@@ -1,4 +1,5 @@
 .top-line {
+    display: flex;
     @media (max-width: $break_lg) {
         align-items: center;
     }
@@ -6,21 +7,23 @@
         flex-wrap: wrap;
 
         &:before {
-            content: '';
+            content: "";
             display: block;
-            width: 100%;
             order: 1;
+            width: 100%;
         }
     }
-    display: flex;
-    
+
     &__logo-wrapper {
+        display: flex;
+        align-items: center;
         @media (max-width: $break_md) {
             margin-right: auto;
             margin-bottom: 6px;
         }
-        display: flex;
-        align-items: center;
+        @media (max-width: $break_xss) {
+            margin-bottom: 0;
+        }
     }
 
     &__logo {
@@ -28,6 +31,13 @@
     }
 
     &__description {
+        display: flex;
+        align-items: center;
+        max-width: 245px;
+        margin-left: 16px;
+        font-weight: 600;
+        font-size: rem(13);
+        margin-right: auto;
         @media (max-width: $break_lg) {
             padding-right: 16px;
             font-size: rem(11);
@@ -40,66 +50,74 @@
             max-width: 190px;
             font-size: rem(9);
         }
-        display: flex;
-        align-items: center;
-        max-width: 245px;
-        margin-left: 16px;
-        font-weight: 600;
-        font-size: rem(13);
-        margin-right: auto;
+        @media (max-width: $break_xss) {
+            display: none;
+        }
     }
 
     &__title {
+        margin-bottom: 6px;
         @media (max-width: $break_lg) {
             display: none;
         }
-        margin-bottom: 6px;
     }
-    
+
     &__socials {
+        margin-right: 30px;
         @media (max-width: $break_lg) {
             margin-right: 16px;
         }
         @media (max-width: $break_md) {
             margin-right: 10px;
         }
-        margin-right: 30px;
+        @media (max-width: $break_xss) {
+            display: none;
+        }
     }
 
     &__socials-list {
         display: flex;
         align-items: center;
-        gap: 10px;
     }
 
-    &__socials-item {}
+    &__socials-item {
+        margin-right: 10px;
 
-    &__social {}
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__social {
+    }
 
     &__call {
+        margin-right: 30px;
         @media (max-width: $break_lg) {
             margin-right: 16px;
         }
         @media (max-width: $break_md) {
             margin-right: 10px;
         }
-        margin-right: 30px;
     }
 
     &__dropdown {
     }
 
     &__call-description {
+        font-size: rem(11);
+        line-height: 145%;
         @media (max-width: $break_lg) {
             display: none;
         }
-        font-size: rem(11);
-        line-height: 145%;
     }
 
-    &__btn {}
+    &__btn {
+    }
 
     &__btn-wrapper {
+        display: flex;
+        align-items: center;
         @media (max-width: $break_lg) {
             margin-right: 16px;
         }
@@ -107,15 +125,16 @@
             order: 3;
             margin-right: 0;
         }
-        display: flex;
-        align-items: center;
+        @media (max-width: $break_xss) {
+            display: none;
+        }
     }
 
     &__hamburger {
+        display: none;
         @media (max-width: $break_lg) {
             display: block;
         }
-        display: none;
     }
 
     &__link {
