@@ -1,0 +1,9 @@
+mixin 404-module({ className = false })
+    include ../../components/single-page/single-page
+    
+    +single-page({
+        className: "module-404",
+        title: "Ошибка <mark>404</mark> <br>Страница не <br>найдена",
+        description: "Но вы всё равно можете ознакомиться с <br>нашими услугами или связаться с нами",
+        imgName: "404_img"
+    })

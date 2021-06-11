@@ -60,10 +60,20 @@
             @media (max-width: $break_sm) {
                 flex-direction: column;
             }
+
+            &:hover .clients__slide-img {
+                filter: saturate(1);
+            }
         }
 
         .clients__slide-img {
             border-radius: 50%;
+            filter: saturate(0);
+            transition: {
+                property: filter;
+                duration: 0.5s;
+            }
+
             @media (max-width: $break_md) {
                 max-width: 150px;
             }

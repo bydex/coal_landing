@@ -51,8 +51,17 @@
     &__slide-img {
         max-width: 100%;
         margin-bottom: 20px;
+        filter: saturate(0);
         @media (max-width: $break_xss) {
             margin-bottom: 8px;
+        }
+
+        &:hover {
+            filter: saturate(1);
+        }
+        transition: {
+            property: filter;
+            duration: 0.5s;
         }
     }
 

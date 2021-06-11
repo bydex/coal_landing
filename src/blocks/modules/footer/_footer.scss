@@ -3,7 +3,6 @@
         top: 29px;
         bottom: 30px;
     }
-    background-color: $alpha-light;
 
     &__container {
         @include container();
@@ -71,5 +70,20 @@
             text-align: left;
         }
         text-align: right;
+    }
+
+    &_theme {
+        &_light {
+            color: $light;
+
+            .footer__logo {
+                fill: $light;
+                color: $dark;
+            }
+        }
+
+        &_alpha {
+            background-color: $alpha-light;
+        }
     }
 }

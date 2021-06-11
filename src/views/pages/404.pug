@@ -1,1 +1,12 @@
-h3 Page not found
+extends ../layouts/default
+block variables
+	- const title = "Страница не найдена | ТОО «НИЦ «Уголь»"
+
+include ../../blocks/pages/404/404
+
+block content
+	+404({})
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

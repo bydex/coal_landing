@@ -1,0 +1,12 @@
+.module-404 {
+    .single-page__img {
+        top: 54px;
+        right: 64px;
+        @media (max-width: $break_md) {
+            top: 50%;
+            left: 50%;
+            max-width: 90%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

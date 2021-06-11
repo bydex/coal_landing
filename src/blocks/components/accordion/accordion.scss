@@ -49,12 +49,13 @@
             right: 0;
             font-size: rem(42);
             font-weight: 200;
+            transform: rotate(180deg);
             @media (max-width: $break_sm) {
                 font-size: rem(32);
             }
 
             .accordion__item_active & {
-                transform: rotate(180deg);
+                transform: rotate(0);
             }
             transition: {
                 property: transform;

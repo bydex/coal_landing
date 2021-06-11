@@ -33,6 +33,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    &_not-home {
+        background: {
+            color: $dark;
+            image: url(../img/intro/background.jpg);
+            size: cover;
+            position: top center;
+            attachment: fixed;
+        }
+    }
 }
 .main {
     flex-grow: 1;
@@ -464,6 +474,16 @@ body {
         height: 320px;
         background-color: rgba($alpha-light, 0.1);
         pointer-events: none;
+    }
+
+    &_transparent {
+        &:before,
+        &:after {
+            border: 1px solid rgba($light, 0.1);
+        }
+        &:before {
+            background-color: rgba($alpha-light, 0.1);
+        }
     }
 }
 

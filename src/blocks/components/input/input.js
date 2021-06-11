@@ -94,7 +94,7 @@ class Form {
                 if (context.validate(this)) {
                     context.sendForm(
                         context.serialize(this),
-                        () => (window.location = "/thanks")
+                        () => (window.location = "/thanks.html")
                     );
                 }
             });

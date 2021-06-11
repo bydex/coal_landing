@@ -10,5 +10,10 @@ gallery &&
             slideBy: "page",
             mode: "gallery",
             nav: false,
+            autoplay: true,
+            autoplayHoverPause: true,
+            autoplayButtonOutput: false,
+            autoHeight: true,
+            autoplayTimeout: 4000,
         },
     });

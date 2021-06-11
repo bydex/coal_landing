@@ -1,0 +1,9 @@
+mixin thanks-module({ className = false })
+    include ../../components/single-page/single-page
+    
+    +single-page({
+        className: "thanks-module",
+        title: "Спасибо, ваша <br>заявка <mark>успешно</mark> отправлена",
+        description: "мы свяжемся с вами в <br>ближайшее время",
+        imgName: "thanks_img"
+    })

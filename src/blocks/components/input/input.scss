@@ -5,6 +5,9 @@
     &_lg {
         .input__icon {
             padding-left: 25px;
+            @media (max-width: $break_sm) {
+                padding-left: 20px;
+            }
         }
         .input__field {
             min-height: 70px;
@@ -23,6 +26,9 @@
 
         &.input_icon .input__field {
             padding-left: 48px;
+            @media (max-width: $break_sm) {
+                padding-left: 39px;
+            }
         }
     }
 
@@ -96,8 +102,7 @@
 
     &_textarea {
         .input__field {
-            min-height: 76px;
-            border-radius: 20px;
+            border-radius: 40px;
         }
     }
 
@@ -143,6 +148,9 @@
         width: 16px;
         transform: translateY(-50%);
         padding-left: inherit;
+        @media (max-width: $break_sm) {
+            width: 14px;
+        }
         transition: {
             duration: 0.3s;
             property: color;

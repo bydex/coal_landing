@@ -28,6 +28,10 @@ function tnsSlider({ sliderBlock, options = {} }) {
             .querySelector("[data-fslightbox]")
             ?.removeAttribute("data-fslightbox");
     });
+
+    sliderBlock.addEventListener("mouseleave", function () {
+        slider.play();
+    });
 }
 
 export default tnsSlider;

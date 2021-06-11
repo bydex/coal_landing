@@ -9,7 +9,7 @@ mixin certificates({ className = false })
                         .certificates__gallery-list.gallery__list
                             each slide in certificatesStaff
                                 .certificates__slide.gallery__slide
-                                    a.certificates__slide-inner(data-fslightbox="certificates" href=`./img/certificates/${slide.imgName}@2x.jpg`)
+                                    a.certificates__slide-inner(data-fslightbox="certificates" href=`./img/certificates/${slide.imgName}-detail.jpg`)
                                         img.certificates__slide-img.tns-lazy(
                                             data-src=`./img/certificates/${slide.imgName}.jpg` 
                                             data-srcset=`./img/certificates/${slide.imgName}@2x.jpg 2x` 

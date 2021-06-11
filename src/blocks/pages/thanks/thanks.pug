@@ -1,0 +1,10 @@
+mixin thanks({ className = false })
+    include ../../modules/thanks-module/thanks-module
+    include ../../modules/modal-request/modal-request
+    include ../../modules/modal-call/modal-call
+    include ../../modules/modal-policy/modal-policy
+    
+    +thanks-module({})
+    +modal-request({})
+    +modal-call({})
+    +modal-policy({})

@@ -1,0 +1,12 @@
+extends ../layouts/default
+block variables
+	- const title = "Спасибо за заявку | ТОО «НИЦ «Уголь»"
+
+include ../../blocks/pages/thanks/thanks
+
+block content
+	+thanks({})
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

@@ -20,7 +20,11 @@ mixin about({ className = false })
                                                     p.about__slide-description Сертифицированные специалисты «НИЦ&nbsp;Уголь»
                                                     h4.about__slide-title !{slide.title}
                                                     small.about__slide-status !{slide.status}
-                                                img.about__slide-img(src=`./img/about/${slide.imgName}.png` srcset=`./img/${slide.imgName}@2x.png 2x` alt=`Фото сотрудника ${slide.title}`)
+                                                img.about__slide-img.tns-lazy(
+                                                    data-src=`./img/about/${slide.imgName}.png` 
+                                                    data-srcset=`./img/about/${slide.imgName}@2x.png 2x` 
+                                                    alt=`Фото сотрудника ${slide.title}`
+                                                )
                                 .gallery__footer.about__slider-footer
                                     .gallery__control-panel
                                         .gallery__pagination 

@@ -1,0 +1,22 @@
+mixin single-page({ className = false, title, description, imgName })
+
+    section.single-page(class=className)
+        .single-page__container
+            .single-page__row 
+                .single-page__info-col
+                    h1.single-page__title !{title}
+                    p.single-page__description !{description}
+                    .single-page__buttons
+                        +btn({ 
+                            className: 'single-page__btn btn_size_lg btn_theme_alpha-hover', 
+                            title: 'Назад на главную',
+                            icon: {
+                                position: 'left',
+                                iconName: 'home',
+                                viewBoxName: '0 0 31 27'
+                            },
+                            link: "/",
+                        })
+                .single-page__img-col
+                    .single-page__rounds.rounds.rounds_transparent
+                        img.single-page__img(src=`./img/${imgName}.svg` alt='')

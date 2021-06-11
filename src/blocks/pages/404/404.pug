@@ -1,0 +1,10 @@
+mixin 404({ className = false })
+    include ../../modules/404-module/404-module
+    include ../../modules/modal-request/modal-request
+    include ../../modules/modal-call/modal-call
+    include ../../modules/modal-policy/modal-policy
+    
+    +404-module({})
+    +modal-request({})
+    +modal-call({})
+    +modal-policy({})

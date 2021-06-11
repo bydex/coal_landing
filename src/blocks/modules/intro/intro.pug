@@ -40,7 +40,7 @@ mixin intro({ className = false })
                                 .gallery__slide
                                     img.gallery__img.tns-lazy(
                                         data-src=`./img/intro/${slide.imgName}.png` 
-                                        data-srcset=`./img/${slide.imgName}@2x.png 2x`
+                                        data-srcset=`./img/intro/${slide.imgName}@2x.png 2x`
                                     )
                         .gallery__footer.intro__gallery-footer
                             .gallery__control-panel
@@ -66,8 +66,7 @@ mixin intro({ className = false })
                                     .gallery__description !{slide.description}
                                     
         a.intro__mouse(href="#services")
-            +icon({
-                iconName: 'mouse',
-                className: 'intro__mouse-icon',
-                viewBoxName: '0 0 20 69'
-            })
+            svg.intro__mouse-icon(width='20' height='69' viewbox='0 0 20 69' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path.intro__mouse-arrow(d='M10.608 68.254L3.09 62.962L3.09 61.828L10.146 66.742L10.146 52L10.986 52L10.986 66.826L18 61.828L18 62.962L10.608 68.254Z' fill='currentColor')
+                rect(x='0.5' y='0.5' width='19' height='32' rx='9.5' stroke='currentColor')
+                rect(x='8.5' y='8.5' width='3' height='6' rx='1.5' stroke='currentColor')
