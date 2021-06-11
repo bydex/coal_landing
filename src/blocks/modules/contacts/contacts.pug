@@ -9,15 +9,10 @@ mixin contacts({ className = false })
                 .contacts__info-col
                     h3.contacts__subtitle Звоните
                     ul.contacts__links
-                        li.contacts__link-item 
-                            a.contacts__link.link.link_size_xl(href=`tel:${config.phone[0].tel}`) !{config.phone[0].number}
-                            small.contacts__link-description (мобильный)
-                        li.contacts__link-item 
-                            a.contacts__link.link.link_size_large(href=`tel:${config.phone[1].tel}`) !{config.phone[1].number}
-                            small.contacts__link-description (городской)
-                        li.contacts__link-item 
-                            a.contacts__link.link.link_size_large(href=`tel:${config.phone[2].tel}`) !{config.phone[2].number}
-                            small.contacts__link-description (городской)
+                        each phone, index in config.phone
+                            li.contacts__link-item 
+                                a.contacts__link.link(class=`${index === 0 ? "link_size_xl" : "link_size_lg"}` href=`tel:${phone.tel}`) !{phone.number}
+                                small.contacts__link-description !{phone.text.long}
                     p.contacts__description Работаем Пн-Пт: 8:30-17:30, Сб-Вс выходные
                     p.contacts__bold-title Пишите в мессенджер, ответим оперативно в течении 30 минут 
                     ul.contacts__socials-list
@@ -62,13 +57,13 @@ mixin contacts({ className = false })
                                             className: 'gallery__control-icon'
                                         })
                         .gallery__list
-                            each slide in contactsAdvantages
+                            each slide, index in Array(19)
                                 .gallery__slide
-                                    .contacts__slide-inner
-                                        img.contacts__slide-img(
-                                            src=`./img/${slide.imgName}.jpg` 
-                                            srcset=`./img/${slide.imgName}@2x.jpg 2x` 
-                                            alt=`Картинка преимущества ${slide.title}`
+                                    a.contacts__slide-inner(data-fslightbox="contacts" href=`./img/contacts/${index + 1}-detailed.jpg`)
+                                        img.contacts__slide-img.tns-lazy(
+                                            data-src=`./img/contacts/${index + 1}.jpg` 
+                                            data-srcset=`./img/contacts/${index + 1}@2x.jpg 2x` 
+                                            alt=`Картинка преимущества`
                                         )
                 .contacts__map-col
                     h3.contacts__subtitle Наш адрес

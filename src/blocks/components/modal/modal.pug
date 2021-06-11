@@ -5,15 +5,15 @@ mixin modal({ className = false, modalName, title, description, iconName })
             .modal__container(role='dialog' aria-modal='true' aria-labelledby=`${modalName}-title`)
                 header.modal__header
                     .modal__header-info
-                        h2.modal__title !{title}
-                        if description
-                            p.modal__description !{description}
                         button.modal__close(aria-label="Close modal" data-custom-close)
                             +icon({
                                 iconName: 'close',
                                 className: 'modal__icon',
                                 viewBoxName: '0 0 13 13'
                             })
+                        h2.modal__title !{title}
+                        if description
+                            p.modal__description !{description}
                     if (iconName)
                         .card__img.modal__img
                             +icon({

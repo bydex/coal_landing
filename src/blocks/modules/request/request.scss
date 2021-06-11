@@ -144,6 +144,9 @@
     &__textarea {
         grid-column: 2;
         grid-row: 1 / 3;
+        @media (max-width: $break_md) {
+            min-height: 170px;
+        }
     }
 
     &__form-footer {
@@ -171,7 +174,7 @@
     }
     background: {
         color: $dark;
-        image: url(../img/request_background.jpg);
+        image: url(../img/request/background.jpg);
         size: cover;
         position: top center;
         attachment: fixed;

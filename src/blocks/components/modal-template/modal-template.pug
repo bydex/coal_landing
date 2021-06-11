@@ -1,4 +1,4 @@
-mixin modal-template({ className = false, modalName, title, description, slides, iconName = false })
+mixin modal-template({ className = false, modalName, title, description, slides, iconName = false, advantage })
     include ../../modules/about/data
     include ../modal/modal
     include ../input/input
@@ -9,10 +9,18 @@ mixin modal-template({ className = false, modalName, title, description, slides,
         className: 'modal_xl modal-template',
         title,
         description,
-        iconName
+        iconName,
     })      
         .modal-template__row 
             .modal-template__gallery-col
+                if advantage
+                    .modal-template__advantage-top.checked-item 
+                        +icon({
+                            iconName: 'check',
+                            viewBoxName: '0 0 11 8',
+                            className: 'checked-item__icon'
+                        })
+                        | !{advantage}
                 .modal-template__gallery.gallery(id="modal-template-gallery")
                     .gallery__footer
                         .gallery__control-panel
@@ -34,13 +42,13 @@ mixin modal-template({ className = false, modalName, title, description, slides,
                                         className: 'gallery__control-icon'
                                     })
                     .gallery__list
-                        each slide in slides
+                        each slide, index in Array(19)
                             .gallery__slide
-                                .modal-template__slide-inner
-                                    img.modal-template__slide-img(
-                                        src=`./img/${slide.imgName}.jpg` 
-                                        srcset=`./img/${slide.imgName}@2x.jpg 2x` 
-                                        alt=`Картинка преимущества ${slide.title}`
+                                a.modal-template__slide-inner(data-fslightbox=modalName href=`./img/contacts/${index + 1}-detailed.jpg`)
+                                    img.modal-template__slide-img.tns-lazy(
+                                        data-src=`./img/contacts/${index + 1}.jpg` 
+                                        data-srcset=`./img/contacts/${index + 1}@2x.jpg 2x` 
+                                        alt=`Картинка преимущества`
                                     )
                 ul.modal-template__advantages
                     each advantage in aboutAdvantages

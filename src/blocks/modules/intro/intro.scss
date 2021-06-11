@@ -106,6 +106,24 @@
         @media (max-width: $break_sm) {
             max-width: 200px;
         }
+
+        .gallery {
+            &__slide {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                height: 240px;
+            }
+
+            &__img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            &__rounds {
+                top: 150px;
+            }
+        }
     }
 
     &__gallery-list {
@@ -146,7 +164,7 @@
     }
     background: {
         color: $dark;
-        image: url(../img/intro_background.jpg);
+        image: url(../img/intro/background.jpg);
         size: cover;
         position: top center;
         attachment: fixed;

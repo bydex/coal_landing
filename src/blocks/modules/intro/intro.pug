@@ -38,7 +38,10 @@ mixin intro({ className = false })
                         .gallery__list.intro__gallery-list
                             each slide in sliderInfo
                                 .gallery__slide
-                                    img.gallery__img(src=`./img/${slide.imgName}.png` srcset=`./img/${slide.imgName}@2x.png 2x`)
+                                    img.gallery__img.tns-lazy(
+                                        data-src=`./img/intro/${slide.imgName}.png` 
+                                        data-srcset=`./img/${slide.imgName}@2x.png 2x`
+                                    )
                         .gallery__footer.intro__gallery-footer
                             .gallery__control-panel
                                 .gallery__pagination 

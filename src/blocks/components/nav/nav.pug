@@ -14,9 +14,8 @@ mixin nav({ className = false })
                     })
                 .nav__description !{config.slogan}
             .nav__phones
-                a.link.link_size_large.link_without-hover.nav__phone(href=`tel:${config.phone[0].tel}`) #{config.phone[0].number}
-                a.link.link_size_small.link_without-hover.nav__phone(href=`tel:${config.phone[1].tel}`) #{config.phone[1].number}
-                a.link.link_size_small.link_without-hover.nav__phone(href=`tel:${config.phone[2].tel}`) #{config.phone[2].number}
+                each phone, index in config.phone
+                    a.link.link_without-hover.nav__phone(class=`${index === 0 ? "link_size_large" : "link_size_small"}` href=`tel:${phone.tel}`) #{phone.number}
             .nav__info
                 ul.nav__socials
                     li.nav__socials-item 

@@ -45,7 +45,6 @@ class Input {
         input.classList.remove(this.filledClass);
     }
     manageFilled(input) {
-        console.log(input, this.isFilled(input));
         if (this.isFilled(input)) {
             this.setFilled(input);
         } else {
@@ -143,8 +142,6 @@ class Form {
         formElements = Object.entries(formElements).filter((item) =>
             item[1] ? item[1] : false
         );
-
-        console.log(formElements);
 
         return formElements;
     }

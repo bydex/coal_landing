@@ -74,6 +74,7 @@
     },
     "dependencies": {
         "@yaireo/fakescroll": "^2.5.1",
+        "fslightbox": "^3.2.3",
         "lozad": "^1.16.0",
         "micromodal": "^0.4.6",
         "smart-grid": "^2.1.2",

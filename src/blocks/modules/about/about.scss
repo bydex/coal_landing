@@ -180,6 +180,7 @@
         margin-bottom: 20px;
         @media (max-width: $break_sm) {
             max-width: 170px;
+            margin-right: 20px;
         }
 
         &:last-child {
@@ -211,7 +212,7 @@
         bottom: 83px;
     }
     background: {
-        image: url(../img/about_background.jpg);
+        image: url(../img/about/background.jpg);
         color: $dark;
         size: cover;
         position: top center;

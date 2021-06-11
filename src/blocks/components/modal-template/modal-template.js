@@ -11,19 +11,13 @@ Array.from(document.querySelectorAll(".modal-template")).forEach((modal) => {
                 slideBy: 1,
                 nav: false,
                 loop: true,
+                items: 2,
                 responsive: {
                     0: {
+                        gutter: 15,
+                    },
+                    [config.media.xss]: {
                         gutter: 30,
-                    },
-                    [config.media.xss]: {},
-                    [config.media.sm]: {
-                        items: 2,
-                    },
-                    [config.media.md]: {
-                        items: 1,
-                    },
-                    [config.media.xl]: {
-                        items: 2,
                     },
                 },
             },

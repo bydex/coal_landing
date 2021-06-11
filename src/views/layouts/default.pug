@@ -18,16 +18,36 @@ include ../../blocks/modules/footer/footer
 		},
 		phone: [
 			{
+				number: '+7 (776) 523 19 19',
+				tel: '+77765231919',
+				text: {
+					short: '(моб)',
+					long: '(мобильный)'
+				}
+			},
+			{
 				number: '+7 (705) 316 30 41',
-				tel: '+77053163041'
+				tel: '+77053163041',
+				text: {
+					short: '(моб)',
+					long: '(мобильный)'
+				}
 			},
 			{
 				number: '+7 (7212) 49 22 06',
-				tel: '+77212492206'
+				tel: '+77212492206',
+				text: {
+					short: '(гор)',
+					long: '(городской)'
+				}
 			},
 			{
 				number: '+7 (7212) 49 29 41',
-				tel: '+77212492941'
+				tel: '+77212492941',
+				text: {
+					short: '(гор)',
+					long: '(городской)'
+				}
 			},
 		],
 		slogan: 'ТОО &laquo;Научно-исследовательский центр &laquo;Уголь&raquo; (ТОО &laquo;НИЦ &laquo;Уголь&raquo;)'
@@ -58,6 +78,9 @@ html(lang="ru")
 		link(rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png")
 		link(rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png")
 		link(rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png")
+		link(href="./fonts/Montserrat-Regular.woff2" rel="preload" as="font" type="font/woff2" crossorigin="")
+		link(href="./fonts/Montserrat-Bold.woff2" rel="preload" as="font" type="font/woff2" crossorigin="")
+		link(href="./fonts/Montserrat-SemiBold.woff2" rel="preload" as="font" type="font/woff2" crossorigin="")
 		link(rel="stylesheet" href="styles/main.css")
 	body
 		.page-wrapper(id="home")

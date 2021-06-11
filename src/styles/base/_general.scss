@@ -213,6 +213,9 @@ body {
             font-size: rem(18);
             font-weight: 700;
         }
+        &_medium {
+            font-size: rem(13);
+        }
         &_small {
             font-size: rem(11);
             font-weight: 700;
@@ -230,6 +233,10 @@ body {
 
     &_arrow {
         padding-right: 14px;
+    }
+
+    &_bold {
+        font-weight: 700;
     }
 
     &__arrow {
@@ -258,6 +265,7 @@ body {
 }
 
 .dropdown {
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -286,6 +294,44 @@ body {
             top: 6px;
             bottom: 6px;
         }
+    }
+
+    &__content {
+        position: absolute;
+        top: calc(100% + 4px);
+        right: 0;
+        z-index: 5;
+        padding: 15px;
+        background-color: rgba($light, 0.1);
+        border: 1px solid rgba($light, 0.1);
+        backdrop-filter: blur(10px);
+        white-space: nowrap;
+        transform: translateY(24px);
+        opacity: 0;
+        visibility: hidden;
+        transition: {
+            duration: 0.5s;
+            property: opacity, visibility, transform;
+        }
+
+        .dropdown_active & {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    &__item {
+        margin-bottom: 7px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__description {
+        font-size: rem(9);
+        margin-left: 9px;
     }
 }
 
@@ -327,6 +373,11 @@ body {
         position: absolute;
     }
 
+    &__list {
+        transition-property: transform !important;
+        overflow: hidden;
+    }
+
     &__pagination {
         display: flex;
         align-items: flex-end;
@@ -339,6 +390,7 @@ body {
         font-weight: 700;
         font-size: rem(32);
         line-height: 85%;
+        min-width: 43px;
     }
 
     &__pagination-item:last-child {

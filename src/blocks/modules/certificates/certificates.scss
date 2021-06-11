@@ -1,4 +1,5 @@
 .certificates {
+    animation: ticker 15s linear infinite;
     @media (max-width: $break_md) {
         padding: {
             bottom: 166px;
@@ -14,17 +15,6 @@
             position-y: calc(100% - 35px);
         }
     }
-    padding: {
-        top: 80px;
-        bottom: 80px;
-    }
-    background: {
-        image: url(../img/certificates_text.svg);
-        repeat: repeat-x;
-        position-x: 0;
-        position-y: calc(100% - 50px);
-    }
-    animation: ticker 15s linear infinite;
 
     &__container {
         @include container();
@@ -35,14 +25,14 @@
     }
 
     &__gallery-col {
-        @media (max-width: $break_md) {
-            margin-bottom: 22px;
-        }
         @include col();
         @include size(6);
         @include size-xl(5);
         @include size-lg(6);
         @include size-md(12);
+        @media (max-width: $break_md) {
+            margin-bottom: 22px;
+        }
     }
 
     &__gallery {
@@ -59,31 +49,31 @@
     }
 
     &__slide-img {
+        max-width: 100%;
+        margin-bottom: 20px;
         @media (max-width: $break_xss) {
             margin-bottom: 8px;
         }
-        max-width: 100%;
-        margin-bottom: 20px;
     }
 
     &__slide-title {
+        font-size: rem(13);
+        font-weight: 600;
+        line-height: 154%;
         @media (max-width: $break_xss) {
             font-size: rem(11);
             line-height: normal;
             margin-bottom: 4px;
         }
-        font-size: rem(13);
-        font-weight: 600;
-        line-height: 154%;
     }
 
     &__slide-description {
+        font-size: rem(13);
+        line-height: 154%;
         @media (max-width: $break_xss) {
             font-size: rem(11);
             line-height: normal;
         }
-        font-size: rem(13);
-        line-height: 154%;
     }
 
     &__info-col {
@@ -95,17 +85,27 @@
     }
 
     &__title {
+        @include h4();
+        margin-bottom: 24px;
         @media (max-width: $break_sm) {
             margin-bottom: 13px;
         }
-        @include h4();
-        margin-bottom: 24px;
     }
 
     &__list {
         @media (max-width: $break_sm) {
             font-size: rem(13);
         }
+    }
+    padding: {
+        top: 80px;
+        bottom: 80px;
+    }
+    background: {
+        image: url(../img/certificates/text.svg);
+        repeat: repeat-x;
+        position-x: 0;
+        position-y: calc(100% - 50px);
     }
 }
 

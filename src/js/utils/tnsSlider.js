@@ -15,11 +15,19 @@ function tnsSlider({ sliderBlock, options = {} }) {
         controlsText: ["←", "→"],
         controlsContainer: sliderBlock.querySelector("#controls"),
         navContainer: sliderBlock.querySelector("#thumbnails"),
+        lazyload: true,
+        lazyloadSelector: ".tns-lazy",
         ...options,
     });
 
     setPagination(slider.getInfo());
     slider.events.on("indexChanged", setPagination);
+
+    sliderBlock.querySelectorAll(".tns-slide-cloned").forEach((clonedSlide) => {
+        clonedSlide
+            .querySelector("[data-fslightbox]")
+            ?.removeAttribute("data-fslightbox");
+    });
 }
 
 export default tnsSlider;

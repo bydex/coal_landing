@@ -9,10 +9,10 @@ mixin certificates({ className = false })
                         .certificates__gallery-list.gallery__list
                             each slide in certificatesStaff
                                 .certificates__slide.gallery__slide
-                                    .certificates__slide-inner
-                                        img.certificates__slide-img(
-                                            src=`./img/${slide.imgName}.jpg` 
-                                            srcset=`./img/${slide.imgName}@2x.jpg 2x` 
+                                    a.certificates__slide-inner(data-fslightbox="certificates" href=`./img/certificates/${slide.imgName}@2x.jpg`)
+                                        img.certificates__slide-img.tns-lazy(
+                                            data-src=`./img/certificates/${slide.imgName}.jpg` 
+                                            data-srcset=`./img/certificates/${slide.imgName}@2x.jpg 2x` 
                                             alt=`Скан документа "${slide.title}"`
                                         )
                                         p.certificates__slide-title !{slide.title}

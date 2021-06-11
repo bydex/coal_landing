@@ -38,6 +38,12 @@ mixin top-line({ className = false })
                         iconName: 'chevron-down', 
                         viewBoxName: '0 0 10 7' 
                     })
+                ul.dropdown__content 
+                    each phone, index in config.phone
+                        li.dropdown__item
+                            a.link.link_bold(class=`${index === 0 ? "link_size_large" : false}` href=`tel:${phone.tel}`) !{phone.number}
+                            small.dropdown__description !{phone.text.short}
+                        
             small.top-line__call-description ПН-ПТ с 9:00 до 18:00
         .top-line__btn-wrapper
             +btn({ 

@@ -10,9 +10,9 @@ mixin clients({ className = false })
                         each slide in clientsAdvantages
                             .gallery__slide
                                 .clients__slide-inner
-                                    img.clients__slide-img(
-                                        src=`./img/${slide.imgName}.jpg` 
-                                        srcset=`./img/${slide.imgName}@2x.jpg 2x` 
+                                    img.clients__slide-img.tns-lazy(
+                                        data-src=`./img/clients/${slide.imgName}.jpg` 
+                                        data-srcset=`./img/clients/${slide.imgName}@2x.jpg 2x` 
                                         alt=`Картинка преимущества ${slide.title}`
                                     )
                                     .clients__slide-info
@@ -46,9 +46,9 @@ mixin clients({ className = false })
                         each slide in clientsList
                             .gallery__slide
                                 .clients__slide-inner
-                                    img.clients__slide-img(
-                                        src=`./img/${slide.imgName}.svg` 
-                                        alt=`Фото сотрудника ${slide.title}`
+                                    img.clients__slide-img.tns-lazy(
+                                        data-src=`./img/clients/${slide.imgName}.svg` 
+                                        alt=`Логотип компании ${slide.title}`
                                     )
                                     .clients__slide-title !{slide.title}
                                     .clients__slide-description !{slide.description} 
