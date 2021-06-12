@@ -40,10 +40,10 @@ mixin contacts({ className = false })
                         .gallery__footer
                             .gallery__control-panel
                                 .gallery__pagination 
-                                    span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                    span.gallery__pagination-item.gallery__pagination-item_active(data-active-pagination) 01
                                     | /
-                                    span.gallery__pagination-item(id="total-pagination") 03
-                                .gallery__controls(id="controls")
+                                    span.gallery__pagination-item(data-total-pagination) 03
+                                .gallery__controls(data-controls)
                                     button.gallery__control.link
                                         +icon({
                                             iconName: 'arrow-left',
@@ -61,6 +61,7 @@ mixin contacts({ className = false })
                                 .gallery__slide
                                     a.contacts__slide-inner(data-fslightbox="contacts" href=`./img/contacts/${index + 1}-detailed.jpg`)
                                         img.contacts__slide-img.tns-lazy(
+                                            src=config.srcPixel
                                             data-src=`./img/contacts/${index + 1}.jpg` 
                                             data-srcset=`./img/contacts/${index + 1}@2x.jpg 2x` 
                                             alt=`Картинка преимущества`

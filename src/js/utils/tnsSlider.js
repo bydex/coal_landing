@@ -1,8 +1,12 @@
 import { tns } from "tiny-slider/src/tiny-slider";
 
 function tnsSlider({ sliderBlock, options = {} }) {
-    const activePagination = sliderBlock.querySelector("#active-pagination");
-    const totalPagination = sliderBlock.querySelector("#total-pagination");
+    const activePagination = sliderBlock.querySelector(
+        "[data-active-pagination]"
+    );
+    const totalPagination = sliderBlock.querySelector(
+        "[data-total-pagination]"
+    );
 
     // eslint-disable-next-line no-inner-declarations
     function setPagination(sliderInfo) {
@@ -13,8 +17,8 @@ function tnsSlider({ sliderBlock, options = {} }) {
     const slider = tns({
         container: sliderBlock.querySelector(".gallery__list"),
         controlsText: ["←", "→"],
-        controlsContainer: sliderBlock.querySelector("#controls"),
-        navContainer: sliderBlock.querySelector("#thumbnails"),
+        controlsContainer: sliderBlock.querySelector("[data-controls]"),
+        navContainer: sliderBlock.querySelector("[data-thumbnails]"),
         lazyload: true,
         lazyloadSelector: ".tns-lazy",
         ...options,

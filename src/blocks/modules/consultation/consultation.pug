@@ -7,22 +7,23 @@ mixin consultation({ className = false })
             .consultation__row
                 .consultation__form-col
                     form.consultation__form
-                        legend.consultation__title <b>Для бесплатной консультации</b> нужен только ваш телефон
-                        fieldset.consultation__form-row 
-                            +input({
-                                typeName: 'tel',
-                                iconName: 'phone',
-                                viewBoxName: '0 0 16 16',
-                                className: 'consultation__input input_lg input_alpha',
-                                placeholder: 'Ваш телефон'
-                            })
-                            +btn({ 
-                                className: 'consultation__btn btn_size_lg btn_theme_light-dark', 
-                                title: 'Оставить заявку',
-                            })
-                            +checkbox({
-                                className: 'consultation__checkbox checkbox_light',
-                            })
+                        fieldset
+                            legend.consultation__title <b>Для бесплатной консультации</b> нужен только ваш телефон
+                            .consultation__form-row 
+                                +input({
+                                    typeName: 'tel',
+                                    iconName: 'phone',
+                                    viewBoxName: '0 0 16 16',
+                                    className: 'consultation__input input_lg input_alpha',
+                                    placeholder: 'Ваш телефон'
+                                })
+                                +btn({ 
+                                    className: 'consultation__btn btn_size_lg btn_theme_light-dark', 
+                                    title: 'Оставить заявку',
+                                })
+                                +checkbox({
+                                    className: 'consultation__checkbox checkbox_light',
+                                })
                 .consultation__info-col
                     .consultation__card
                         img.consultation__card-img(

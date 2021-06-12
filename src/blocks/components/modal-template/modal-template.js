@@ -2,7 +2,7 @@ import { tnsSlider } from "%js%/utils/index";
 import config from "%js%/config";
 
 Array.from(document.querySelectorAll(".modal-template")).forEach((modal) => {
-    const gallery = modal.querySelector("#modal-template-gallery");
+    const gallery = modal.querySelector("[data-modal-template-gallery]");
 
     gallery &&
         tnsSlider({

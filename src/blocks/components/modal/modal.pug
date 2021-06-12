@@ -1,4 +1,5 @@
-mixin modal({ className = false, modalName, title, description, iconName })
+mixin modal({ className = false, modalName, title, description, iconName, dotsPosition })
+    include ../card-img/card-img
 
     section.modal.micromodal(class=[className, modalName] aria-hidden='true' id=modalName)
         .modal__overlay(tabindex='-1' data-custom-close='')
@@ -15,12 +16,11 @@ mixin modal({ className = false, modalName, title, description, iconName })
                         if description
                             p.modal__description !{description}
                     if (iconName)
-                        .card__img.modal__img
-                            +icon({
-                                iconName: iconName,
-                                viewBoxName: '0 0 55 55',
-                                className: 'card__icon',
-                            })
+                        +card-img({
+                            className: 'modal__img',
+                            iconName,
+                            dotsPosition
+                        })
                 .modal__content
                     block
                 +icon({

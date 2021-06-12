@@ -249,6 +249,10 @@ body {
         font-weight: 700;
     }
 
+    &_semibold {
+        font-weight: 600;
+    }
+
     &__arrow {
         position: absolute;
         right: 0;
@@ -441,6 +445,64 @@ body {
 }
 
 .rounds {
+    &__dot {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        transform-origin: left top;
+
+        &_1 {
+            @media (max-width: $break_sm) {
+                width: 121px;
+                height: 121px;
+            }
+            width: 204px;
+            height: 204px;
+            animation: rotate 5s linear infinite;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &_2 {
+            @media (max-width: $break_sm) {
+                width: 187px;
+                height: 187px;
+            }
+            width: 320px;
+            height: 320px;
+            animation: rotate 8s linear infinite;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &_3 {
+            @media (max-width: $break_sm) {
+                width: 187px;
+                height: 187px;
+            }
+            width: 320px;
+            height: 320px;
+            animation: rotate 10s linear infinite;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
     &:before,
     &:after {
         content: "";
@@ -451,7 +513,7 @@ body {
         transform: translate(-50%, -50%);
         border-radius: 50%;
         backdrop-filter: blur(15px);
-        border: 1px solid rgba($dark, 0.1);
+        border: 1px solid rgba($light, 0.1);
     }
     &:before {
         @media (max-width: $break_sm) {
@@ -477,10 +539,6 @@ body {
     }
 
     &_transparent {
-        &:before,
-        &:after {
-            border: 1px solid rgba($light, 0.1);
-        }
         &:before {
             background-color: rgba($alpha-light, 0.1);
         }
@@ -488,17 +546,19 @@ body {
 }
 
 .dot {
-    display: block;
-    width: 12px;
-    height: 12px;
-    background-color: $alpha;
-    border-radius: 50%;
-
-    &_md {
+    &:before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        background-color: $alpha;
+        border-radius: 50%;
+    }
+    &_md::before {
         width: 8px;
         height: 8px;
     }
-    &_sm {
+    &_sm::before {
         width: 6px;
         height: 6px;
     }

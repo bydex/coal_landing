@@ -37,13 +37,13 @@
             }
         ],
         "order/order": [
-            "custom-properties", {
-                "type": "at-rule",
-                "name": "include"
-            },
             "declarations", {
                 "type": "at-rule",
                 "name": "media"
+            },
+            "custom-properties", {
+                "type": "at-rule",
+                "name": "include"
             },
             {
                 "type": "rule",
@@ -68,6 +68,12 @@
                     "content",
                     "box-sizing",
                     "display",
+                    "position",
+                    "z-index",
+                    "top",
+                    "right",
+                    "bottom",
+                    "left",
                     "flex",
                     "flex-wrap",
                     "flex-basis",
@@ -90,26 +96,20 @@
                     "grid-row-*",
                     "grid-template",
                     "grid-template-*",
-                    "position",
-                    "z-index",
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
                     "width",
                     "min-width",
                     "max-width",
                     "height",
                     "min-height",
                     "max-height",
-                    "overflow",
-                    "overflow-*",
                     "margin",
                     "margin-*",
-                    "border",
-                    "border-*",
                     "padding",
                     "padding-*",
+                    "overflow",
+                    "overflow-*",
+                    "border",
+                    "border-*",
                 ]
             },
             {

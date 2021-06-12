@@ -11,6 +11,7 @@ mixin clients({ className = false })
                             .gallery__slide
                                 .clients__slide-inner
                                     img.clients__slide-img.tns-lazy(
+                                        src=config.srcPixel
                                         data-src=`./img/clients/${slide.imgName}.jpg` 
                                         data-srcset=`./img/clients/${slide.imgName}@2x.jpg 2x` 
                                         alt=`Картинка преимущества ${slide.title}`
@@ -21,10 +22,10 @@ mixin clients({ className = false })
                     .gallery__footer
                         .gallery__control-panel
                             .gallery__pagination 
-                                span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                span.gallery__pagination-item.gallery__pagination-item_active(data-active-pagination) 01
                                 | /
-                                span.gallery__pagination-item(id="total-pagination") 03
-                            .gallery__controls(id="controls")
+                                span.gallery__pagination-item(data-total-pagination) 03
+                            .gallery__controls(data-controls)
                                 button.gallery__control.link
                                     +icon({
                                         iconName: 'arrow-left',
@@ -47,18 +48,19 @@ mixin clients({ className = false })
                             .gallery__slide
                                 .clients__slide-inner
                                     img.clients__slide-img.tns-lazy(
+                                        src=config.srcPixel
                                         data-src=`./img/clients/${slide.imgName}.svg` 
-                                        alt=`Логотип компании ${slide.title}`
+                                        alt=''
                                     )
                                     .clients__slide-title !{slide.title}
                                     .clients__slide-description !{slide.description} 
                 .gallery__footer
                     .gallery__control-panel
                         .gallery__pagination 
-                            span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                            span.gallery__pagination-item.gallery__pagination-item_active(data-active-pagination) 01
                             | /
-                            span.gallery__pagination-item(id="total-pagination") 03
-                        .gallery__controls(id="controls")
+                            span.gallery__pagination-item(data-total-pagination) 03
+                        .gallery__controls(data-controls)
                             button.gallery__control.link
                                 +icon({
                                     iconName: 'arrow-left',

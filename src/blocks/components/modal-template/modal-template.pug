@@ -1,4 +1,4 @@
-mixin modal-template({ className = false, modalName, title, description, slides, iconName = false, advantage })
+mixin modal-template({ className = false, modalName, title, description, slides, iconName = false, advantage, dotsPosition })
     include ../../modules/about/data
     include ../modal/modal
     include ../input/input
@@ -10,6 +10,7 @@ mixin modal-template({ className = false, modalName, title, description, slides,
         title,
         description,
         iconName,
+        dotsPosition
     })      
         .modal-template__row 
             .modal-template__gallery-col
@@ -21,14 +22,14 @@ mixin modal-template({ className = false, modalName, title, description, slides,
                             className: 'checked-item__icon'
                         })
                         | !{advantage}
-                .modal-template__gallery.gallery(id="modal-template-gallery")
+                .modal-template__gallery.gallery(data-modal-template-gallery)
                     .gallery__footer
                         .gallery__control-panel
                             .gallery__pagination 
-                                span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                span.gallery__pagination-item.gallery__pagination-item_active(data-active-pagination) 01
                                 | /
-                                span.gallery__pagination-item(id="total-pagination") 03
-                            .gallery__controls(id="controls")
+                                span.gallery__pagination-item(data-total-pagination) 03
+                            .gallery__controls(data-controls)
                                 button.gallery__control.link
                                     +icon({
                                         iconName: 'arrow-left',
@@ -46,6 +47,7 @@ mixin modal-template({ className = false, modalName, title, description, slides,
                             .gallery__slide
                                 a.modal-template__slide-inner(data-fslightbox=modalName href=`./img/contacts/${index + 1}-detailed.jpg`)
                                     img.modal-template__slide-img.tns-lazy(
+                                        src=config.srcPixel
                                         data-src=`./img/contacts/${index + 1}.jpg` 
                                         data-srcset=`./img/contacts/${index + 1}@2x.jpg 2x` 
                                         alt=`Картинка преимущества`

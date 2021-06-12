@@ -32,23 +32,25 @@ mixin intro({ className = false })
                 .intro__img-col
                     .intro__gallery.gallery(id="intro-gallery")
                         .gallery__rounds.rounds
-                            span.gallery__dot.gallery__dot-1.dot
-                            span.gallery__dot.gallery__dot-2.dot
-                            span.gallery__dot.gallery__dot-3.dot
+                            span.rounds__dot.rounds__dot_1.dot
+                            span.rounds__dot.rounds__dot_2.dot
+                            span.rounds__dot.rounds__dot_3.dot
                         .gallery__list.intro__gallery-list
                             each slide in sliderInfo
                                 .gallery__slide
                                     img.gallery__img.tns-lazy(
+                                        src=config.srcPixel
                                         data-src=`./img/intro/${slide.imgName}.png` 
                                         data-srcset=`./img/intro/${slide.imgName}@2x.png 2x`
+                                        alt=""
                                     )
                         .gallery__footer.intro__gallery-footer
                             .gallery__control-panel
                                 .gallery__pagination 
-                                    span.gallery__pagination-item.gallery__pagination-item_active(id="active-pagination") 01
+                                    span.gallery__pagination-item.gallery__pagination-item_active(data-active-pagination) 01
                                     | /
-                                    span.gallery__pagination-item(id="total-pagination") 03
-                                .gallery__controls(id="controls")
+                                    span.gallery__pagination-item(data-total-pagination) 03
+                                .gallery__controls(data-controls)
                                     button.gallery__control.link
                                         +icon({
                                             iconName: 'arrow-left',
@@ -61,7 +63,7 @@ mixin intro({ className = false })
                                             viewBoxName: '0 0 17 16',
                                             className: 'gallery__control-icon'
                                         })
-                            .gallery__thumbnails(id="thumbnails")
+                            .gallery__thumbnails(data-thumbnails)
                                 each slide in sliderInfo
                                     .gallery__description !{slide.description}
                                     

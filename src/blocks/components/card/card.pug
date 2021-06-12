@@ -1,11 +1,12 @@
-mixin card({ className = false, iconName, title, description, advantage, modalName })
+mixin card({ className = false, iconName, title, description, advantage, modalName, dotsPosition })
+    include ../card-img/card-img
+
     li.card(class=className)
-        .card__img 
-            +icon({
-                iconName: iconName,
-                viewBoxName: '0 0 55 55',
-                className: 'card__icon',
-            })
+        +card-img({
+            className: 'card__img',
+            iconName,
+            dotsPosition
+        })
         .card__info
             h4.card__title !{title}
             p.card__description !{description}

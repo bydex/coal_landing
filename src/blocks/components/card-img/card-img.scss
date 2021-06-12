@@ -1,0 +1,40 @@
+.card-img {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    max-width: 140px;
+    min-height: 140px;
+    max-height: 140px;
+    color: $alpha;
+    background-color: $dark;
+    border-radius: 50%;
+    @media (max-width: $break_md) {
+        min-width: 100px;
+        max-width: 100px;
+        min-height: 100px;
+        max-height: 100px;
+    }
+    transition: {
+        duration: 0.3s;
+        property: color, background-color;
+    }
+
+    &__dot {
+        position: absolute;
+
+        &:before {
+            background-color: currentColor;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        z-index: 1;
+        width: 55px;
+        @media (max-width: $break_sm) {
+            width: 40px;
+        }
+    }
+}

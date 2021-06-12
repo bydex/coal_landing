@@ -12,34 +12,35 @@ mixin request({ className = false })
                         figcaption.request__caption Мы более 20 лет на рынке!
                 .request__form-col
                     form.request__form
-                        legend.request__form-title Но если у вас специфичная задача или просто есть вопросы, оставляйте заявку, мы свяжемся с вами в течении 30 минут
-                        fieldset.request__form-body 
-                            +input({
-                                iconName: 'user',
-                                viewBoxName: '0 0 16 16',
-                                className: 'request__input input_lg input_gamma',
-                                placeholder: 'Ваше имя'
-                            })
-                            +input({
-                                iconName: 'phone',
-                                typeName: 'tel',
-                                viewBoxName: '0 0 16 16',
-                                className: 'request__input input_lg input_gamma',
-                                placeholder: 'Ваш телефон'
-                            })
-                            +input({
-                                tag: 'textarea',
-                                className: 'request__textarea input_lg input_textarea input_gamma',
-                                placeholder: 'Кратко опишите вашу задачу'
-                            })
-                        fieldset.request__form-footer
-                            +btn({ 
-                                className: 'request__btn btn_size_lg btn_theme_alpha', 
-                                title: 'Оставить заявку',
-                            })
-                            +checkbox({
-                                className: 'request__checkbox checkbox_alpha',
-                            })
+                        fieldset
+                            legend.request__form-title Но если у вас специфичная задача или просто есть вопросы, оставляйте заявку, мы свяжемся с вами в течении 30 минут
+                            .request__form-body 
+                                +input({
+                                    iconName: 'user',
+                                    viewBoxName: '0 0 16 16',
+                                    className: 'request__input input_lg input_gamma',
+                                    placeholder: 'Ваше имя'
+                                })
+                                +input({
+                                    iconName: 'phone',
+                                    typeName: 'tel',
+                                    viewBoxName: '0 0 16 16',
+                                    className: 'request__input input_lg input_gamma',
+                                    placeholder: 'Ваш телефон'
+                                })
+                                +input({
+                                    tag: 'textarea',
+                                    className: 'request__textarea input_lg input_textarea input_gamma',
+                                    placeholder: 'Кратко опишите вашу задачу'
+                                })
+                            .request__form-footer
+                                +btn({ 
+                                    className: 'request__btn btn_size_lg btn_theme_alpha', 
+                                    title: 'Оставить заявку',
+                                })
+                                +checkbox({
+                                    className: 'request__checkbox checkbox_alpha',
+                                })
                     figure.request__logo-wrapper.request__logo-wrapper_mobile
                         img.request__img(src="./img/logo.svg" alt="Логотип «НИЦ Уголь»")
                         figcaption.request__caption Мы более 20 лет на рынке!

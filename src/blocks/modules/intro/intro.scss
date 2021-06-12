@@ -19,8 +19,8 @@
     }
 
     &__row {
-        @include row-flex();
         justify-content: space-between;
+        @include row-flex();
     }
 
     &__info-col {
@@ -30,30 +30,30 @@
     }
 
     &__img-col {
-        @include col();
-        @include size(4);
-        @include size-lg(5);
-        @include size-md(12);
         margin-top: 33px;
         @media (max-width: $break_md) {
             margin-top: 55px;
         }
+        @include col();
+        @include size(4);
+        @include size-lg(5);
+        @include size-md(12);
     }
 
     &__title {
-        @include h1();
         margin-bottom: 17px;
         color: $alpha;
+        @include h1();
     }
 
     &__description {
-        @include h4();
         margin-bottom: 47px;
         font-weight: 600;
         line-height: 145%;
         @media (max-width: $break_lg) {
             margin-bottom: 20px;
         }
+        @include h4();
     }
 
     &__advantages {
@@ -190,6 +190,7 @@
             width: 16px;
         }
     }
+
     padding: {
         top: 217px;
         bottom: 81px;
@@ -212,5 +213,13 @@
     to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0) translate(-50%, -50%);
+    }
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
     }
 }
