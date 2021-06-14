@@ -70,7 +70,8 @@
         @include size(6);
         margin-top: 16px;
 
-        &:nth-child(1), &:nth-child(2) {
+        &:nth-child(1),
+        &:nth-child(2) {
             margin-top: 0;
         }
     }
@@ -83,5 +84,20 @@
 
     &__content {
         margin-bottom: 36px;
+    }
+
+    &__btn-row {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        margin-left: 30px;
+        font-weight: 400;
+    }
+
+    &__link-inner {
+        display: inline-block;
+        width: 100%;
     }
 }

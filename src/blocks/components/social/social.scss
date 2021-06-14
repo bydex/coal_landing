@@ -11,7 +11,7 @@
     border-radius: 50%;
     transition: {
         property: color, background-color;
-        duration: .5s;
+        duration: 0.5s;
     }
 
     &:hover {
@@ -22,5 +22,19 @@
     &__icon {
         width: 15px;
         height: 15px;
+    }
+
+    &_size {
+        &_lg {
+            min-width: 40px;
+            min-height: 40px;
+            max-width: 40px;
+            max-height: 40px;
+
+            .social__icon {
+                width: 22px;
+                height: 22px;
+            }
+        }
     }
 }

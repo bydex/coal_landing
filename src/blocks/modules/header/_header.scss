@@ -22,6 +22,10 @@
         position: top center;
         attachment: fixed;
     }
+    .ios & {
+        background-size: auto;
+        background-attachment: local;
+    }
 
     &__container {
         @include container();
@@ -31,7 +35,29 @@
             margin-bottom: 0;
         }
         margin-bottom: 23px;
+        transition: {
+            duration: 0.3s;
+            property: margin-bottom;
+        }
     }
     &__nav {
+        transition: {
+            duration: 0.3s;
+            property: font-size;
+        }
+    }
+}
+.page-wrapper_active {
+    .header {
+        &__top-line {
+            @media (max-width: $break_lg) {
+                margin-bottom: 0;
+            }
+            margin-bottom: 16px;
+        }
+
+        &__nav {
+            font-size: rem(13);
+        }
     }
 }

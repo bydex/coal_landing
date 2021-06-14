@@ -103,6 +103,7 @@
     padding: 60px;
     transform: translateY(50px);
     background-color: rgba($light, 0.1);
+    border: 1px solid rgba($light, 0.1);
     backdrop-filter: blur(10px);
     text-align: left;
     vertical-align: middle;
@@ -110,7 +111,6 @@
     @media (max-width: $break_md) {
         padding: 30px;
         padding-top: 40px;
-        border-radius: 20px;
     }
     @media (max-width: $break_xss) {
         padding: 40px 15px 30px 15px;
@@ -189,7 +189,8 @@
         property: color;
     }
 }
-.modal__close:hover, .modal__close:focus {
+.modal__close:hover,
+.modal__close:focus {
     color: $alpha;
 }
 .modal__close:active {
@@ -314,6 +315,7 @@
     animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.micromodal-slide .modal__container, .micromodal-slide .modal__overlay {
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
     will-change: transform;
 }

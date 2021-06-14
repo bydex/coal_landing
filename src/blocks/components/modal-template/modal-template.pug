@@ -1,4 +1,4 @@
-mixin modal-template({ className = false, modalName, title, description, slides, iconName = false, advantage, dotsPosition })
+mixin modal-template({ className = false, modalName, title, description, slides, iconName = false, advantage, dotsPosition, pdf = false})
     include ../../modules/about/data
     include ../modal/modal
     include ../input/input
@@ -62,15 +62,24 @@ mixin modal-template({ className = false, modalName, title, description, slides,
             .modal-template__info-col
                 .modal-template__content.content.custom-scroll
                     block
-                +btn({ 
-                    icon: {
-                        position: 'left',
-                        iconName: 'request',
-                        viewBoxName: '0 0 31 27'
-                    },
-                    className: 'modal-template__btn btn_size_lg btn_theme_alpha', 
-                    title: 'Оставить заявку',
-                    attributesName: {
-                        'data-custom-open': 'modal-request'
-                    }
-                })
+                .modal-template__btn-row
+                    +btn({ 
+                        icon: {
+                            position: 'left',
+                            iconName: 'request',
+                            viewBoxName: '0 0 31 27'
+                        },
+                        className: 'modal-template__btn btn_size_lg btn_theme_alpha', 
+                        title: 'Оставить заявку',
+                        attributesName: {
+                            'data-custom-open': 'modal-request'
+                        }
+                    })
+                    if pdf
+                        a.modal-template__link.link.link_icon.link_size_small(href=pdf target="_blank") 
+                            +icon({
+                                iconName: 'pdf',
+                                className: 'link__icon',
+                                viewBoxName: '0 0 22 28'
+                            })
+                            | Описание <br>услуги в PDF

@@ -4,49 +4,50 @@ mixin nav({ className = false })
     include ../btn/btn
 
     .nav(class=className id="nav")
-        .nav__header
-            .nav__logo-wrapper
+        .nav__wrapper
+            .nav__header
                 .nav__logo-wrapper
-                    +icon({ 
-                        iconName: 'logo', 
-                        viewBoxName: '0 0 43 41', 
-                        className: 'nav__logo logo logo_light'
+                    .nav__logo-wrapper
+                        +icon({ 
+                            iconName: 'logo', 
+                            viewBoxName: '0 0 43 41', 
+                            className: 'nav__logo logo logo_light'
+                        })
+                    .nav__description !{config.slogan}
+                .nav__phones
+                    each phone, index in config.phone
+                        a.link.link_without-hover.nav__phone(class=`${index === 0 ? "link_size_large" : "link_size_small"}` href=`tel:${phone.tel}`) #{phone.number}
+                .nav__info
+                    ul.nav__socials
+                        li.nav__socials-item 
+                            +social({ 
+                                hrefName: config.socials.whatsapp.href,
+                                className: 'nav__social', 
+                                iconName: config.socials.whatsapp.iconName,
+                                viewBoxName: '0 0 15 15'
+                            })
+                        li.nav__socials-item 
+                            +social({
+                                hrefName: config.socials.telegram.href,
+                                className: 'nav__social',
+                                iconName: config.socials.telegram.iconName,
+                                viewBoxName: '0 0 15 15'
+                            })
+                    +btn({ 
+                        className: 'top-line__btn btn_size_sm btn_theme_light', 
+                        title: 'Перезвонить',
+                        attributesName: {
+                            'data-custom-open': 'modal-call',
+                            'data-close-menu': '',
+                        }
                     })
-                .nav__description !{config.slogan}
-            .nav__phones
-                each phone, index in config.phone
-                    a.link.link_without-hover.nav__phone(class=`${index === 0 ? "link_size_large" : "link_size_small"}` href=`tel:${phone.tel}`) #{phone.number}
-            .nav__info
-                ul.nav__socials
-                    li.nav__socials-item 
-                        +social({ 
-                            hrefName: config.socials.whatsapp.href,
-                            className: 'nav__social', 
-                            iconName: config.socials.whatsapp.iconName,
-                            viewBoxName: '0 0 15 15'
-                        })
-                    li.nav__socials-item 
-                        +social({
-                            hrefName: config.socials.telegram.href,
-                            className: 'nav__social',
-                            iconName: config.socials.telegram.iconName,
-                            viewBoxName: '0 0 15 15'
-                        })
-                +btn({ 
-                    className: 'top-line__btn btn_size_sm btn_theme_light', 
-                    title: 'Перезвонить',
-                    attributesName: {
-                        'data-custom-open': 'modal-call',
-                        'data-close-menu': '',
-                    }
-                })
 
-        nav.nav__inner
-            ul.nav__list 
-                each link in navLinks
-                    li.nav__item 
-                        if (link.iconName)
-                            a.nav__link(class="nav__link_icon" href=`#${link.href}` data-close-menu)
-                                +icon({ className: 'nav__icon', iconName: link.iconName, viewBoxName: link.viewBoxName })
-                        else
-                            a.nav__link(href=`/#${link.href}` data-close-menu) !{link.title}
+            nav.nav__inner
+                ul.nav__list 
+                    each link in navLinks
+                        li.nav__item 
+                            if (link.iconName)
+                                a.nav__link(class="nav__link_icon" href=`#${link.href}` data-close-menu)
+                                    +icon({ className: 'nav__icon', iconName: link.iconName, viewBoxName: link.viewBoxName })
+                            else
+                                a.nav__link(href=`/#${link.href}` data-close-menu) !{link.title}

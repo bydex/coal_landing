@@ -1,5 +1,5 @@
 .certificates {
-    animation: ticker 15s linear infinite;
+    animation: ticker 45s linear infinite;
     @media (max-width: $break_md) {
         padding: {
             bottom: 166px;
@@ -96,12 +96,15 @@
     &__title {
         @include h4();
         margin-bottom: 24px;
+        line-height: 150%;
         @media (max-width: $break_sm) {
             margin-bottom: 13px;
         }
     }
 
     &__list {
+        line-height: 150%;
+
         @media (max-width: $break_sm) {
             font-size: rem(13);
         }

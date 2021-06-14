@@ -42,6 +42,10 @@ body {
             position: top center;
             attachment: fixed;
         }
+        .ios & {
+            background-size: auto 100%;
+            background-attachment: local;
+        }
     }
 }
 .main {
@@ -245,6 +249,14 @@ body {
         padding-right: 14px;
     }
 
+    &_icon {
+        min-height: 28px;
+        display: inline-flex;
+        align-items: center;
+        padding-left: 32px;
+        font-weight: 400;
+    }
+
     &_bold {
         font-weight: 700;
     }
@@ -259,11 +271,21 @@ body {
         top: 50%;
         transform: translateY(-50%);
     }
+
+    &__icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 22px;
+        max-height: 28px;
+    }
 }
 
 .content {
     p,
-    ul {
+    ul,
+    a {
         margin-bottom: 16px;
     }
     li {
@@ -271,11 +293,19 @@ body {
     }
     p,
     li,
-    ul {
+    ul,
+    a {
         &:last-child {
             margin-bottom: 0;
         }
     }
+}
+
+.mb-0 {
+    margin-bottom: 0px !important;
+}
+.mb-4 {
+    margin-bottom: 4px !important;
 }
 
 .dropdown {
@@ -434,6 +464,11 @@ body {
         display: block;
         margin-left: 9px;
         margin-right: 9px;
+
+        &:disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
     }
 
     &__control-icon {
@@ -579,7 +614,7 @@ body {
 
 .list {
     &__item {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
 
         &:last-child {
             margin-bottom: 0;
@@ -625,5 +660,43 @@ body {
     &_light {
         fill: $light;
         color: $dark;
+    }
+}
+
+.page-wrapper_active .link-top {
+    opacity: 1;
+    transform: rotate(0);
+    visibility: visible;
+}
+.link-top {
+    @media (max-width: $break_md) {
+        bottom: 24px;
+        right: 24px;
+    }
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $light;
+    background-color: $alpha;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transform: rotate(180deg);
+    visibility: hidden;
+    transition: {
+        property: transform, opacity, visibility;
+        duration: 1s;
+    }
+    &__icon {
+        @media (max-width: $break_md) {
+            max-width: 12px;
+        }
+        max-width: 16px;
     }
 }

@@ -19,35 +19,6 @@
         text-align: center;
     }
 
-    // &__img {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    //     min-width: 140px;
-    //     max-width: 140px;
-    //     min-height: 140px;
-    //     max-height: 140px;
-    //     background-color: $dark;
-    //     border-radius: 50%;
-    //     @media (max-width: $break_md) {
-    //         min-width: 100px;
-    //         max-width: 100px;
-    //         min-height: 100px;
-    //         max-height: 100px;
-    //     }
-    //     transition: {
-    //         duration: 0.3s;
-    //         property: color, background-color;
-    //     }
-    // }
-
-    // &__icon {
-    //     width: 55px;
-    //     @media (max-width: $break_sm) {
-    //         width: 40px;
-    //     }
-    // }
-
     &__info {
         margin-left: 30px;
         @media (max-width: $break_xl) {
@@ -68,13 +39,15 @@
     }
 
     &__title {
+        @include h4();
         margin-bottom: 10px;
         font-weight: 600;
-        @include h4();
+        line-height: 136%;
     }
 
     &__description {
-        margin-bottom: 20px;
+        max-width: 235px;
+        margin-bottom: 22px;
         line-height: 137%;
         @media (max-width: $break_sm) {
             margin-bottom: 15px;
@@ -83,8 +56,11 @@
     }
 
     &__advantage {
-        margin-bottom: 20px;
+        margin-bottom: 23px;
         color: $alpha;
+        font-size: rem(13);
+        font-weight: 600;
+        line-height: 123%;
         @media (max-width: $break_sm) {
             max-width: 288px;
             font-size: rem(13);

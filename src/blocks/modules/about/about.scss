@@ -37,9 +37,9 @@
     }
 
     &__subtitle {
-        @include h3();
+        @include h4();
         font-weight: 600;
-        line-height: 145%;
+        line-height: 150%;
     }
 
     &__info-wrapper {
@@ -69,11 +69,16 @@
 
     &__slide {
         position: relative;
+        min-height: 252px;
+        @media (max-width: $break_sm) {
+            min-height: 192px;
+        }
     }
 
     &__slide-inner {
         @media (max-width: $break_md) {
             display: flex;
+            align-items: flex-start;
         }
     }
 
@@ -82,6 +87,7 @@
         top: 0;
         left: 0;
         max-width: 170px;
+        padding-top: 6px;
         @media (max-width: $break_md) {
             position: static;
         }
@@ -92,6 +98,7 @@
 
     &__slide-description {
         @include p-sm();
+        line-height: 135%;
         margin-bottom: 10px;
     }
 
@@ -106,17 +113,20 @@
     }
 
     &__slide-img {
+        min-height: 252px;
         margin-left: auto;
         @media (max-width: $break_md) {
             margin-left: 32px;
         }
         @media (max-width: $break_sm) {
             margin-left: auto;
+            min-height: 192px;
             max-width: 130px;
         }
     }
 
     &__slider-footer {
+        margin-top: 23px;
         @media (max-width: $break_md) {
             margin-top: -56px;
         }
@@ -147,7 +157,7 @@
 
     &__link {
         display: inline-block;
-        margin-top: 17px;
+        margin-top: 24px;
         font-size: rem(13);
     }
 
@@ -190,7 +200,7 @@
 
     &__map {
         position: absolute;
-        bottom: -53px;
+        bottom: -21px;
         left: -77px;
         user-select: none;
         pointer-events: none;
@@ -217,5 +227,9 @@
         size: cover;
         position: top center;
         attachment: fixed;
+    }
+    .ios & {
+        background-size: auto 100%;
+        background-attachment: local;
     }
 }

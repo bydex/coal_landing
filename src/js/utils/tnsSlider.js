@@ -14,6 +14,10 @@ function tnsSlider({ sliderBlock, options = {} }) {
         totalPagination.textContent = `0${sliderInfo.slideCount}`.slice(-2);
     }
 
+    sliderBlock.querySelectorAll(".gallery__slide").forEach((slide, index) => {
+        slide.dataset.slideIndex = index;
+    });
+
     const slider = tns({
         container: sliderBlock.querySelector(".gallery__list"),
         controlsText: ["←", "→"],
@@ -28,9 +32,20 @@ function tnsSlider({ sliderBlock, options = {} }) {
     slider.events.on("indexChanged", setPagination);
 
     sliderBlock.querySelectorAll(".tns-slide-cloned").forEach((clonedSlide) => {
-        clonedSlide
-            .querySelector("[data-fslightbox]")
-            ?.removeAttribute("data-fslightbox");
+        const lightbox = clonedSlide.querySelector("[data-fslightbox]");
+
+        if (lightbox) {
+            lightbox.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const linkedSlide = sliderBlock.querySelector(
+                    `[data-slide-index="${this.parentNode.dataset.slideIndex}"]:not(.tns-slide-cloned)`
+                );
+
+                linkedSlide.querySelector("[data-fslightbox]").click();
+            });
+            lightbox.removeAttribute("data-fslightbox");
+        }
     });
 
     sliderBlock.addEventListener("mouseleave", function () {

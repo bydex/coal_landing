@@ -1,7 +1,12 @@
 .intro {
     position: relative;
-    min-height: 100vh;
+    min-height: Min(100vh, 900px);
     color: $light;
+    @media (max-width: $break_xl) {
+        padding: {
+            top: 185px;
+        }
+    }
     @media (max-width: $break_lg) {
         padding: {
             top: 120px;
@@ -19,6 +24,9 @@
     }
 
     &__row {
+        @media (max-width: $break_xl) {
+            align-items: center;
+        }
         justify-content: space-between;
         @include row-flex();
     }
@@ -30,7 +38,7 @@
     }
 
     &__img-col {
-        margin-top: 33px;
+        margin-top: 13px;
         @media (max-width: $break_md) {
             margin-top: 55px;
         }
@@ -47,18 +55,18 @@
     }
 
     &__description {
-        margin-bottom: 47px;
+        @include h4();
+        margin-bottom: 45px;
         font-weight: 600;
-        line-height: 145%;
+        line-height: 149%;
         @media (max-width: $break_lg) {
             margin-bottom: 20px;
         }
-        @include h4();
     }
 
     &__advantages {
         display: flex;
-        margin-bottom: 32px;
+        margin-bottom: 30px;
         margin-left: -10px;
         margin-right: -10px;
         @media (max-width: $break_lg) {
@@ -97,7 +105,7 @@
     }
 
     &__gallery {
-        max-width: 291px;
+        max-width: 232px;
         margin-left: auto;
         margin-right: auto;
         @media (max-width: $break_md) {
@@ -137,7 +145,7 @@
     }
 
     &__gallery-list {
-        margin-bottom: 42px;
+        // margin-bottom: 42px;
         @media (max-width: $break_sm) {
             margin-bottom: 0;
         }
@@ -193,7 +201,7 @@
 
     padding: {
         top: 217px;
-        bottom: 81px;
+        bottom: 50px;
     }
     background: {
         color: $dark;
@@ -201,6 +209,11 @@
         size: cover;
         position: top center;
         attachment: fixed;
+    }
+
+    .ios & {
+        background-size: auto 100%;
+        background-attachment: local;
     }
 }
 

@@ -11,22 +11,22 @@ mixin contacts({ className = false })
                     ul.contacts__links
                         each phone, index in config.phone
                             li.contacts__link-item 
-                                a.contacts__link.link(class=`${index === 0 ? "link_size_xl" : "link_size_lg"}` href=`tel:${phone.tel}`) !{phone.number}
+                                a.contacts__link.link(class=`${index === 0 ? "link_size_xl" : "link_size_large"}` href=`tel:${phone.tel}`) !{phone.number}
                                 small.contacts__link-description !{phone.text.long}
                     p.contacts__description Работаем Пн-Пт: 8:30-17:30, Сб-Вс выходные
-                    p.contacts__bold-title Пишите в мессенджер, ответим оперативно в течении 30 минут 
+                    p.contacts__bold-title.p-bold Пишите в мессенджер, ответим оперативно в течении 30 минут 
                     ul.contacts__socials-list
                         li.contacts__socials-item 
                             +social({ 
                                 hrefName: config.socials.whatsapp.href,
-                                className: 'contacts__social', 
+                                className: 'contacts__social social_size_lg', 
                                 iconName: config.socials.whatsapp.iconName,
                                 viewBoxName: '0 0 15 15'
                             })
                         li.contacts__socials-item 
                             +social({
                                 hrefName: config.socials.telegram.href,
-                                className: 'contacts__social',
+                                className: 'contacts__social social_size_lg',
                                 iconName: config.socials.telegram.iconName,
                                 viewBoxName: '0 0 15 15'
                             })
@@ -35,7 +35,9 @@ mixin contacts({ className = false })
                     a.contacts__mail.link.link_underline.link_alpha(href="mailto:nicugol@yandex.ru") nicugol@yandex.ru
                 .contacts__gallery-col
                     h3.contacts__subtitle Наша лаборатория и офисы
-                    p.contacts__description Мы имеем 1 лабораторию, оборудованную техникой, 3 административных офиса. Какой-то полезный текст про лабораторию, про офисы.
+                    .contacts__description-block
+                        p.contacts__description Имеем собственную лабораторию, оснащённую всем необходимым оборудованием.
+                        p.contacts__description Смотрите наши фотографии ниже:
                     .contacts__gallery.gallery(id="contacts-gallery")
                         .gallery__footer
                             .gallery__control-panel

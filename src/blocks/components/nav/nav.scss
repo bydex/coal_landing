@@ -4,26 +4,48 @@
         z-index: 10;
         top: 0;
         right: 0;
-        min-width: 295px;
-        max-width: 295px;
-        height: 100%;
-        padding: 16px 32px;
-        transform: translateX(100%);
-        overflow-y: auto;
-        background: {
-            position: calc(-100% - 205px) calc(100% + 93px);
-            color: $alpha;
-            image: url(../img/consultation/backgroung.svg);
-            repeat: no-repeat;
-            size: 495px 394px;
-        }
+        bottom: 0;
+        left: 0;
+        background: rgba($dark, 0);
+        pointer-events: none;
         transition: {
-            property: transform;
+            property: background;
             duration: 0.5s;
         }
 
         &_active {
-            transform: translateX(0);
+            pointer-events: all;
+            background: rgba($dark, 0.95);
+        }
+    }
+
+    &__wrapper {
+        @media (max-width: $break_lg) {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            right: 0;
+            min-width: 295px;
+            max-width: 295px;
+            height: 100%;
+            padding: 16px 32px;
+            transform: translateX(100%);
+            overflow-y: auto;
+            background: {
+                position: calc(-100% - 205px) calc(100% + 93px);
+                color: $alpha;
+                image: url(../img/consultation/backgroung.svg);
+                repeat: no-repeat;
+                size: 495px 394px;
+            }
+            transition: {
+                property: transform;
+                duration: 0.5s;
+            }
+
+            .nav_active & {
+                transform: translateX(0);
+            }
         }
     }
 
@@ -103,6 +125,7 @@
 
     &__list {
         display: flex;
+        justify-content: space-between;
         margin-left: -20px;
         margin-right: -20px;
         @media (max-width: $break_xl) {
@@ -153,8 +176,10 @@
         }
         transition: {
             duration: 0.3s;
-            property: color;
+            property: color, padding-top, padding-bottom;
         }
+        transform: translate3d(0, 0, 0);
+        will-change: padding-top, padding-bottom;
     }
 
     &__link_icon {
@@ -165,5 +190,13 @@
 
     &__icon {
         width: 17px;
+    }
+}
+.page-wrapper_active {
+    .nav {
+        &__link {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
     }
 }

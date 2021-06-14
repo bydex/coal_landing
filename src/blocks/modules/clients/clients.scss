@@ -21,6 +21,7 @@
         @include size(6);
         @include size-lg(12);
         @include h2();
+        line-height: 110%;
         color: $alpha;
         @media (max-width: $break_lg) {
             margin-bottom: 32px;
@@ -115,6 +116,7 @@
 
         .clients__gallery-description {
             @include h4();
+            line-height: 143%;
             font-weight: 600;
         }
 
@@ -123,6 +125,10 @@
             @include size(8);
             @include size-xl(6);
             @include size-md(12);
+            padding-top: 11px !important;
+            @media (max-width: $break_md) {
+                padding-top: 0 !important;
+            }
         }
 
         .gallery {
@@ -179,5 +185,9 @@
         size: cover;
         position: top center;
         attachment: fixed;
+    }
+    .ios & {
+        background-size: auto 100%;
+        background-attachment: local;
     }
 }

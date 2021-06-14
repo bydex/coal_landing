@@ -12,11 +12,8 @@ class Nav {
     }
 
     initClickOutside() {
-        document.addEventListener("click", (event) => {
-            if (
-                !event.target.closest(`#${this.nav.id}, #hamburger-menu`) &&
-                this.isOpen()
-            ) {
+        this.nav.addEventListener("click", (e) => {
+            if (e.target.classList.contains("nav") && this.isOpen()) {
                 this.close();
                 hamburger.close();
             }

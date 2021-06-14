@@ -7,7 +7,7 @@ mixin accordion({ className = false, accordionList = [] })
                     .accordion__content.content
                         each text in accorion.description 
                             if (Array.isArray(text))
-                                ul 
+                                ul.p-sm 
                                     each textItem in text
                                         li.checked-item 
                                             +icon({
@@ -17,4 +17,4 @@ mixin accordion({ className = false, accordionList = [] })
                                             })
                                             | !{textItem}
                             else 
-                                p !{text}
+                                p.p-sm !{text}
