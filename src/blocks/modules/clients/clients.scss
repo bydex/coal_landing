@@ -57,7 +57,7 @@
 
         .clients__slide-inner {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             @media (max-width: $break_sm) {
                 flex-direction: column;
             }

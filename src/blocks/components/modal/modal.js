@@ -2,9 +2,13 @@ import MicroModal from "micromodal";
 
 let modalScrollTop = 0;
 
-function openModal(modalId) {
+function openModal(modalId, modalTheme) {
     MicroModal.show(modalId, {
         onShow: function (modal) {
+            if (modalTheme) {
+                modal.querySelector("form").dataset.modalTheme = modalTheme;
+            }
+
             modalScrollTop = window.pageYOffset;
 
             const openedModals = Array.from(
@@ -23,7 +27,7 @@ function openModal(modalId) {
 
             document.querySelector("body").scroll(0, modalScrollTop);
         },
-        onClose: function () {
+        onClose: function (modal) {
             // if (modal.id === "request-modal") {
             //     delete modal.querySelector(".form").dataset.good;
             // }
@@ -32,6 +36,9 @@ function openModal(modalId) {
             //         modal.querySelector(".modal__content").empty();
             //     }, 200);
             // }
+            if (modalTheme && modal.querySelector("form")) {
+                delete modal.querySelector("form").dataset.modalTheme;
+            }
             document
                 .querySelector("body, html")
                 .classList.remove("overflow-hidden");
@@ -66,8 +73,9 @@ function openModalVideo(modalId, videoSrc) {
 document.addEventListener("click", function (event) {
     if (event.target.closest("[data-custom-open]")) {
         const modalId = event.target.dataset.customOpen;
+        const modalTheme = event.target.dataset.modalTheme;
 
-        openModal(modalId);
+        openModal(modalId, modalTheme);
     }
     if (event.target.closest("[data-video-open]")) {
         const videoSrc = event.target.dataset.videoOpen;

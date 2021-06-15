@@ -101,9 +101,15 @@ class Form {
         });
     }
     sendForm(data, success = () => {}) {
-        fetch("./mail.php", {
-            method: "POST",
-            body: JSON.stringify(data),
+        const formData = new FormData();
+
+        for (let key in data) {
+            console.log(key, data[key]);
+            formData.append(key, data[key]);
+        }
+        fetch("mail.php", {
+            method: "post",
+            body: formData,
         }).then(success);
     }
     serialize(form) {
@@ -118,7 +124,7 @@ class Form {
 
                 if (key === "phone") {
                     return [key, input.value.replace(/[^\d//+]/g, "")];
-                } else if (key === "subject" || key === "good") {
+                } else if (key === "subject" || key === "theme") {
                     return [key, input];
                 } else {
                     return [key, input.value];
@@ -135,8 +141,8 @@ class Form {
             checkbox: form.querySelector("input[type='checkbox']"),
             message: form.querySelector("textarea"),
             email: form.querySelector("input[type='email']"),
-            subject: form.querySelector("subject"),
-            good: form.querySelector("good"),
+            subject: form.dataset.subject,
+            theme: form.dataset.modalTheme,
         };
 
         formElements = Object.entries(formElements).filter((item) =>
@@ -169,7 +175,7 @@ class Form {
             if (key === "subject") {
                 return true;
             }
-            if (key === "good") {
+            if (key === "theme") {
                 return true;
             }
         });

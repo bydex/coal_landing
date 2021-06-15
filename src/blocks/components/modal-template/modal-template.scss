@@ -97,7 +97,8 @@
     }
 
     &__link-inner {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         width: 100%;
     }
 }

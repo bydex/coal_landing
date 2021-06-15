@@ -9,7 +9,7 @@ mixin modal-call({ className = false })
         title: 'Заказать звонок',
         description: 'Заполните и отправьте свои контакты, мы перезвоним в ближайшее время'
     })      
-        form.modal-request__form
+        form.modal-request__form(data-subject="Перезвонить")
             +input({
                 iconName: 'user',
                 viewBoxName: '0 0 16 16',
@@ -34,5 +34,5 @@ mixin modal-call({ className = false })
                         viewBoxName: '0 0 31 27'
                     },
                     className: 'modal-request__btn btn_size_lg btn_theme_alpha', 
-                    title: 'Оставить заявку',
+                    title: 'Перезвонить',
                 })

@@ -7,9 +7,9 @@ $c = true;
 if ( $method === 'POST' ) {
 
 	$project_name = 'Fabia';
-	$admin_email  = 'ybo16120@eoopy.com'; // your email where will deliver message
-	$form_subject = 'message from dev@bydex.ru'; // message subject
-	$headersMail  = 'dev@bydex.ru';
+	$admin_email  = 'nicugol@yandex.ru, info@nicugol.kz'; // your email where will deliver message
+	$form_subject = 'message from info@nicugol.kz'; // message subject
+	$headersMail  = 'info@nicugol.kz';
 
 	foreach ( $_POST as $key => $value ) {
 		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {

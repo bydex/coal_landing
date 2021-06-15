@@ -23,6 +23,7 @@ mixin card({ className = false, iconName, title, description, advantage, modalNa
                     title: 'Заказать услугу',
                     attributesName: {
                         'data-custom-open': 'modal-request',
+                        'data-modal-theme': title
                     }
                 })
                 button.card__link.link.link_underline.link_arrow(data-custom-open=`modal-${iconName}`) Подробнее <span class="link__arrow">→</span>

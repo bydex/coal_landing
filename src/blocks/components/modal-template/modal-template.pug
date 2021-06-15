@@ -72,11 +72,12 @@ mixin modal-template({ className = false, modalName, title, description, slides,
                         className: 'modal-template__btn btn_size_lg btn_theme_alpha', 
                         title: 'Оставить заявку',
                         attributesName: {
-                            'data-custom-open': 'modal-request'
+                            'data-custom-open': 'modal-request',
+                            'data-modal-theme': title
                         }
                     })
                     if pdf
-                        a.modal-template__link.link.link_icon.link_size_small(href=pdf target="_blank") 
+                        a.modal-template__link.link.link_icon.link_size_small(href=`${pdf}.pdf` target="_blank") 
                             +icon({
                                 iconName: 'pdf',
                                 className: 'link__icon',

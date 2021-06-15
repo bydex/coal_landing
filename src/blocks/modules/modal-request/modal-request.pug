@@ -9,7 +9,7 @@ mixin modal-request({ className = false })
         title: 'Оставить заявку',
         description: 'Заполните и отправьте свои контакты и опишите задачу, мы перезвоним в ближайшее время'
     })      
-        form.modal-request__form
+        form.modal-request__form(data-subject="Оставить заявку")
             +input({
                 iconName: 'user',
                 viewBoxName: '0 0 16 16',

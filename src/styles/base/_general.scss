@@ -326,12 +326,20 @@ body {
         @media (max-width: $break_md) {
             width: 6px;
         }
+        @media (max-width: $break_sm) {
+            width: 10px;
+        }
         width: 8px;
     }
 
     &__arrow {
         @media (max-width: $break_md) {
             padding-left: 7px;
+        }
+        @media (max-width: $break_sm) {
+            padding-left: 11px;
+            padding-top: 12px;
+            padding-bottom: 12px;
         }
         padding: {
             left: 10px;
@@ -698,5 +706,6 @@ body {
             max-width: 12px;
         }
         max-width: 16px;
+        width: 100%;
     }
 }
