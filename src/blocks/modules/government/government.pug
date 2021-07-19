@@ -1,0 +1,55 @@
+mixin government({ className = false })
+    include ../../components/blockquote/blockquote
+
+    section.government(id="government")
+        .government__container
+            .government__row 
+                header.government__header 
+                    h2.government__title Правление
+                    .government__card 
+                        img.government__img(src="./img/government/avatar.jpg" srcset="./img/government/avatar.jpg" alt="Мужчина держит сотовый телефон возле уха, сидя в кресле")
+                        .government__card-info
+                            h3.government__card-title Альшеров Ерлан Бабаханович
+                            p.government__card-subtitle Генеральный директор ТОО «НИЦ Уголь»
+                            p.government__phone-wrapper
+                                a.link.link_bold(href=`tel:${config.phone[1].tel}`) !{config.phone[1].number}
+                                small.government__phone-description (прямой номер ген. директора)
+                            +blockquote({ className: 'government__blockquote'})
+                                | Моя жизненная позиция очень простая: сказал - сделал, в этом&nbsp;весь успех!
+                .government__info-col.content
+                    article 
+                        h6 Общая информация, образование
+                        p Родился в 1974 году в Южно-Казахстанской области, г.Шымкент
+                        p В 2001 году окончил Южно-Казахстанский гуманитарный университет по специальности «Юриспруденция»
+                        p В 2017 году – Российская академия народного хозяйства и государственной службы, специальность «Государственное управление экономическим развитием»
+                    article 
+                        h6 Карьера
+                        ul
+                            li.checked-item 
+                                +icon({
+                                    iconName: 'check',
+                                    viewBoxName: '0 0 11 8',
+                                    className: 'checked-item__icon'
+                                })
+                                | 2008 - 2015 г.г. – Управляющий директор Обогатительной фабрики по переработке и обогащению угля.
+                            li.checked-item 
+                                +icon({
+                                    iconName: 'check',
+                                    viewBoxName: '0 0 11 8',
+                                    className: 'checked-item__icon'
+                                })
+                                | 2015 - 2018 г.г. – Председатель наблюдательного совета в ТОО «Самрук-Казына Инвест» по строительству Обогатительной фабрики угля с замкнутым водоснабжением
+                            li.checked-item 
+                                +icon({
+                                    iconName: 'check',
+                                    viewBoxName: '0 0 11 8',
+                                    className: 'checked-item__icon'
+                                })
+                                | 2018 - 2021 г.г. – Председатель наблюдательного совета в ТОО «Самрук-Казына Инвест» по ТОО «Электрод СК». Управляющий директор ТОО «КазПромСПК», деятельность компании – переработка и обогащение угля
+                            li.checked-item 
+                                +icon({
+                                    iconName: 'check',
+                                    viewBoxName: '0 0 11 8',
+                                    className: 'checked-item__icon'
+                                })
+                                | С марта 2021 г. – Генеральный директор ТОО «НИЦ Уголь»

@@ -25,14 +25,14 @@
     }
 
     &__gallery-col {
+        @media (max-width: $break_md) {
+            margin-bottom: 22px;
+        }
         @include col();
         @include size(6);
         @include size-xl(5);
         @include size-lg(6);
         @include size-md(12);
-        @media (max-width: $break_md) {
-            margin-bottom: 22px;
-        }
     }
 
     &__gallery {
@@ -94,12 +94,12 @@
     }
 
     &__title {
-        @include h4();
         margin-bottom: 24px;
         line-height: 150%;
         @media (max-width: $break_sm) {
             margin-bottom: 13px;
         }
+        @include h4();
     }
 
     &__list {
@@ -123,14 +123,14 @@
 
 @keyframes ticker {
     100% {
-        background-position-x: 2538px;
+        background-position-x: -2538px;
     }
 }
 
 @media (max-width: $break_sm) {
     @keyframes ticker {
         100% {
-            background-position-x: 1002px;
+            background-position-x: -1002px;
         }
     }
 }

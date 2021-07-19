@@ -1,0 +1,36 @@
+.blockquote {
+    position: relative;
+    margin: 0;
+    line-height: 145%;
+    font-style: italic;
+    @media (max-width: $break_sm) {
+        font-size: rem(18);
+        padding: {
+            top: 23px;
+            bottom: 23px;
+        }
+    }
+    @include h4();
+
+    &__quot {
+        position: absolute;
+        width: 23px;
+        @media (max-width: $break_sm) {
+            width: 15px;
+        }
+
+        &_top {
+            top: 0;
+            left: 0;
+        }
+
+        &_bottom {
+            right: 0;
+            bottom: 0;
+        }
+    }
+    padding: {
+        top: 32px;
+        bottom: 32px;
+    }
+}

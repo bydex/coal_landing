@@ -28,14 +28,6 @@ function openModal(modalId, modalTheme) {
             document.querySelector("body").scroll(0, modalScrollTop);
         },
         onClose: function (modal) {
-            // if (modal.id === "request-modal") {
-            //     delete modal.querySelector(".form").dataset.good;
-            // }
-            // if (modal.id === "video-modal") {
-            //     setTimeout(() => {
-            //         modal.querySelector(".modal__content").empty();
-            //     }, 200);
-            // }
             if (modalTheme && modal.querySelector("form")) {
                 delete modal.querySelector("form").dataset.modalTheme;
             }

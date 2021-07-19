@@ -1,0 +1,135 @@
+.government {
+    @media (max-width: $break_sm) {
+        padding: {
+            top: 40px;
+            bottom: 48px;
+        }
+    }
+    background: {
+        image: url(../img/government/background.jpg);
+        repeat: no-repeat;
+        position: top center;
+        size: cover;
+    }
+    padding: {
+        top: 60px;
+        bottom: 60px;
+    }
+
+    &__container {
+        @include container();
+    }
+
+    &__row {
+        justify-content: space-between;
+        @include row-flex();
+    }
+
+    &__header {
+        @include col();
+        @include size(5);
+        @include size-xl(6);
+        @include size-md(12);
+    }
+
+    &__title {
+        margin-bottom: 33px;
+        @media (max-width: $break_sm) {
+            margin-bottom: 26px;
+        }
+        @include h2();
+    }
+
+    &__card {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__img {
+        border-radius: 50%;
+        width: 70px;
+    }
+
+    &__card-info {
+        padding-top: 7px;
+        margin-left: 30px;
+    }
+
+    &__card-title {
+        margin-bottom: 5px;
+        line-height: 145%;
+        @include h4();
+    }
+
+    &__card-subtitle {
+        margin-bottom: 18px;
+        @media (max-width: $break_sm) {
+            font-size: rem(13);
+        }
+    }
+
+    &__phone-wrapper {
+        margin-bottom: 46px;
+        @media (max-width: $break_sm) {
+            margin-bottom: 29px;
+        }
+    }
+
+    &__phone-description {
+        margin-left: 10px;
+        font-size: rem(11);
+        @media (max-width: $break_sm) {
+            display: block;
+            margin-left: 0;
+            margin-top: 5px;
+            width: 100%;
+        }
+    }
+
+    &__blockquote {
+        max-width: 370px;
+    }
+
+    &__info-col {
+        padding-top: 23px;
+        font-size: rem(13);
+        line-height: 123%;
+        @media (max-width: $break_sm) {
+            padding-top: 34px;
+            font-size: rem(11);
+        }
+        @include col();
+        @include size(6);
+        @include size-md(12);
+
+        h6 {
+            margin-bottom: 13px;
+            font-size: inherit;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 11px;
+        }
+
+        article {
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        li {
+            margin-bottom: 12px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        svg {
+            color: inherit;
+        }
+    }
+}

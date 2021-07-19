@@ -1,0 +1,14 @@
+mixin blockquote({ className = false })
+
+    blockquote.blockquote(class=className)
+        +icon({
+            className: 'blockquote__quot blockquote__quot_top',
+            iconName: 'quot-top',
+            viewBoxName: '0 0 23 18'
+        })
+        block
+        +icon({
+            className: 'blockquote__quot blockquote__quot_bottom',
+            iconName: 'quot-bottom',
+            viewBoxName: '0 0 23 18'
+        })

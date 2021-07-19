@@ -1,6 +1,6 @@
 .intro {
     position: relative;
-    min-height: Min(100vh, 900px);
+    min-height: min(100vh, 900px);
     color: $light;
     @media (max-width: $break_xl) {
         padding: {
@@ -19,15 +19,20 @@
         }
     }
 
+    .ios & {
+        background-size: auto 100%;
+        background-attachment: local;
+    }
+
     &__container {
         @include container();
     }
 
     &__row {
+        justify-content: space-between;
         @media (max-width: $break_xl) {
             align-items: center;
         }
-        justify-content: space-between;
         @include row-flex();
     }
 
@@ -55,13 +60,13 @@
     }
 
     &__description {
-        @include h4();
         margin-bottom: 45px;
         font-weight: 600;
         line-height: 149%;
         @media (max-width: $break_lg) {
             margin-bottom: 20px;
         }
+        @include h4();
     }
 
     &__advantages {
@@ -105,7 +110,7 @@
     }
 
     &__gallery {
-        max-width: 232px;
+        max-width: 280px;
         margin-left: auto;
         margin-right: auto;
         @media (max-width: $break_md) {
@@ -165,10 +170,6 @@
         bottom: 60px;
         left: 50%;
         transform: translateX(-50%);
-        transition: {
-            duration: 0.5s;
-            property: transform, color;
-        }
         @media (max-width: $break_lg) {
             bottom: 40px;
         }
@@ -179,6 +180,10 @@
         &:hover {
             color: $alpha;
             transform: scale(1.1) translateX(-50%);
+        }
+        transition: {
+            duration: 0.5s;
+            property: transform, color;
         }
 
         svg {
@@ -209,11 +214,6 @@
         size: cover;
         position: top center;
         attachment: fixed;
-    }
-
-    .ios & {
-        background-size: auto 100%;
-        background-attachment: local;
     }
 }
 

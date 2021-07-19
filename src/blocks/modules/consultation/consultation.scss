@@ -16,24 +16,25 @@
     }
 
     &__row {
+        align-items: center;
         @include row-flex();
     }
 
     &__form-col {
-        @include col();
-        @include size(8);
-        @include size-xl(12);
         @media (max-width: $break_xl) {
             margin-bottom: 32px;
         }
+        @include col();
+        @include size(8);
+        @include size-xl(12);
     }
 
     &__form {
     }
 
     &__title {
-        @include h3();
         margin-bottom: 21px;
+        @include h3();
     }
 
     &__form-row {

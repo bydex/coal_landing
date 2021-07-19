@@ -13,7 +13,10 @@ mixin contacts({ className = false })
                             li.contacts__link-item 
                                 a.contacts__link.link(class=`${index === 0 ? "link_size_xl" : "link_size_large"}` href=`tel:${phone.tel}`) !{phone.number}
                                 small.contacts__link-description !{phone.text.long}
-                    p.contacts__description Работаем Пн-Пт: 8:30-17:30, Сб-Вс выходные
+                    p.contacts__description
+                        | Работаем Пн-Пт с 8:30 до 17:30 <br>
+                        mark (прием проб круглосуточно)
+
                     p.contacts__bold-title.p-bold Пишите в мессенджер, ответим оперативно в течении 30 минут 
                     ul.contacts__socials-list
                         li.contacts__socials-item 
@@ -70,7 +73,7 @@ mixin contacts({ className = false })
                                         )
                 .contacts__map-col
                     h3.contacts__subtitle Наш адрес
-                    p.contacts__description г.Караганда, проспект Н.Назарбаева, 74а (вход со стороны улицы Гастелло)
+                    p.contacts__description г.Караганда, проспект Н.Назарбаева, 74а <br>(заезд со стороны улицы Гастелло)
                     +map({
                         className: 'contacts__map'
                     })

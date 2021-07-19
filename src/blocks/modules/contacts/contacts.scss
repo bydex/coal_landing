@@ -13,9 +13,9 @@
     }
 
     &__title {
-        @include h2();
         margin-bottom: 28px;
         color: $alpha;
+        @include h2();
     }
 
     &__row {
@@ -60,6 +60,12 @@
         margin-bottom: 14px;
         line-height: 150%;
 
+        mark {
+            color: $alpha;
+            font-weight: 600;
+            background-color: transparent;
+        }
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -97,13 +103,13 @@
     }
 
     &__gallery-col {
+        @media (max-width: $break_lg) {
+            margin-top: 32px;
+        }
         @include col();
         @include size(4);
         @include size-lg(6);
         @include size-md(12);
-        @media (max-width: $break_lg) {
-            margin-top: 32px;
-        }
     }
 
     &__gallery {
@@ -139,13 +145,13 @@
     }
 
     &__map-col {
+        @media (max-width: $break_lg) {
+            margin-top: 32px;
+        }
         @include col();
         @include size(4);
         @include size-lg(6);
         @include size-md(12);
-        @media (max-width: $break_lg) {
-            margin-top: 32px;
-        }
     }
 
     &__map {
